@@ -30,3 +30,9 @@ class FleetRestJwtApiController(main.RestController):
     _default_auth = "jwt_demo_keycloak"
     _component_context_provider = "auth_jwt_component_context_provider"
     _default_cors = "*"
+
+
+class FleetRestLogServicesController(main.RestController):
+    _root_path = "/fleet_rest_api/logs/"
+    _collection_name = "fleet.rest.log.services"
+    _default_atuh = "user"
