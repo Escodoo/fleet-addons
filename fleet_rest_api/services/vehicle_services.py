@@ -49,6 +49,14 @@ class VehicleService(Component):
         vehicle.write(self._prepare_params(params))
         return self._to_json(vehicle)
 
+    def delete(self, _id):
+        """
+        Delete vehicle
+        """
+        vehicle = self._get(_id)
+        vehicle.unlink()
+        return {"response": "Vehicle deleted"}
+
     def archive(self, _id, **params):
         """
         Archive the given vehicle. This method is an empty method, IOW it
@@ -57,9 +65,6 @@ class VehicleService(Component):
         describing the content of the response returned by a method.
         This kind of definition is DEPRECATED and will no more supported in
         the future.
-        :param _id:
-        :param params:
-        :return:
         """
         return {"response": "Method archive called with id %s" % _id}
 
@@ -105,6 +110,64 @@ class VehicleService(Component):
                 "schema": {
                     "id": {"type": "integer", "coerce": to_int, "nullable": True},
                     "name": {"type": "string"},
+                    "description": {"type": "string"},
+                    "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                    "company_id": {
+                        "type": "dict",
+                        "schema": {
+                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                        },
+                    },
+                    "license_plate": {"type": "string"},
+                    "vin_sn": {"type": "string"},
+                    "driver_id": {
+                        "type": "dict",
+                        "schema": {
+                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                        },
+                    },
+                    "future_driver_id": {
+                        "type": "dict",
+                        "schema": {
+                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                        },
+                    },
+                    "model_id": {
+                        "type": "dict",
+                        "schema": {
+                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                        },
+                    },
+                    "manager_id": {
+                        "type": "dict",
+                        "schema": {
+                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                        },
+                    },
+                    "brand_id": {
+                        "type": "dict",
+                        "schema": {
+                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
+                        },
+                    },
                 },
             },
             "active": {"coerce": to_bool, "type": "boolean"},
@@ -131,7 +194,17 @@ class VehicleService(Component):
         res = {
             "id": vehicle.id,
             "name": vehicle.name,
-            "car_value": vehicle.car_value,
+            "description": vehicle.description,
+            "active": vehicle.active,
+            "company_id": vehicle.company_id.id,
+            "currency_id": vehicle.currency_id.id,
+            "license_plate": vehicle.license_plate,
+            "vin_sn": vehicle.vin_sn,
+            "driver_id": vehicle.driver_id.id,
+            "future_driver_id": vehicle.future_driver_id.id,
+            "model_id": vehicle.model_id.id,
+            "manager_id": vehicle.manager_id.id,
+            "brand_id": vehicle.brand_id.id,
         }
         if vehicle.model_id:
             res["model"] = {"id": vehicle.model_id.id, "name": vehicle.model_id.name}
