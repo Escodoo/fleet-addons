@@ -24,7 +24,7 @@ class ExceptionService(Component):
     _description = """
         Exception Services
 
-        Services to test hiw exception are handled by base_erst
+        Services to test hiw exception are handled by base_rest
     """
 
     def user_error(self):

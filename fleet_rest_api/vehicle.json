@@ -194,7 +194,7 @@
                 "required": [],
                 "properties": {
                   "name": {"type": "string"},
-                  "car_value": {"type": "string"},
+                  "car_value": {"type": "float"},
                   "model": {
                     "type": "object",
                     "required": [],
@@ -374,7 +374,7 @@
                 "required": [],
                 "properties": {
                   "name": {"type": "string"},
-                  "car_value": {"type": "string"},
+                  "car_value": {"type": "float"},
                   "model": {
                     "type": "object",
                     "required": [],
@@ -407,7 +407,7 @@
                   "required": ["id", "name", "model"],
                   "properties": {
                     "name": {"type": "string"},
-                    "car_value": {"type": "string"},
+                    "car_value": {"type": "float"},
                     "model": {
                       "type": "object",
                       "required": [],
