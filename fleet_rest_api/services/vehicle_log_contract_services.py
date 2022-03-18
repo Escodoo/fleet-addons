@@ -1,6 +1,5 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 from odoo.addons.component.core import Component
-from odoo.addons.base_rest import restapi
 
 
 class VehicleContractLogService(Component):
@@ -23,7 +22,9 @@ class VehicleContractLogService(Component):
         Searh vehicle by name
         """
         vehicles = self.env["fleet.vehicle.log.contract"].name_search(description)
-        vehicles = self.env["fleet.vehicle.log.contract"].browse([i[0] for i in vehicles])
+        vehicles = self.env["fleet.vehicle.log.contract"].browse(
+            [i[0] for i in vehicles]
+        )
         rows = []
         res = {"count": len(vehicles), "rows": rows}
         for vehicle in vehicles:
@@ -35,7 +36,9 @@ class VehicleContractLogService(Component):
         """
         Create a new vehicle
         """
-        vehicle = self.env["fleet.vehicle.log.contract"].create(self._prepare_params(params))
+        vehicle = self.env["fleet.vehicle.log.contract"].create(
+            self._prepare_params(params)
+        )
         return self._to_json(vehicle)
 
     def update(self, _id, **params):
@@ -94,9 +97,7 @@ class VehicleContractLogService(Component):
         }
 
     def _validator_create(self):
-        res = {
-            "description": {"type": "string", "required": True, "empty": False}
-        }
+        res = {"description": {"type": "string", "required": True, "empty": False}}
         return res
 
     def _validator_return_create(self):
@@ -119,6 +120,6 @@ class VehicleContractLogService(Component):
         res = {
             "id": vehicle.id,
             "description": vehicle.description,
-            "date": vehicle.date
+            "date": vehicle.date,
         }
         return res

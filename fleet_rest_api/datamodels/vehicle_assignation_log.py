@@ -5,6 +5,7 @@ from marshmallow import fields
 
 from odoo.addons.datamodel.core import Datamodel
 
+
 class FleetVehicleAssignationLog(Datamodel):
     _name = "fleet.vehicle.assignation.log"
     _description = "Services for vehicle assignation log"

@@ -85,9 +85,7 @@ class VehicleState(Component):
         return res
 
     def _validator_search(self):
-        return {"name":
-                    {"type": "string", "nullable": False, "required": True}
-                }
+        return {"name": {"type": "string", "nullable": False, "required": True}}
 
     def _validator_return_search(self):
         return {
@@ -102,7 +100,7 @@ class VehicleState(Component):
     def _validator_create(self):
         res = {
             "name": {"type": "string", "required": True, "empty": False},
-            "sequence": {"type": "integer", "required": True, "empty": False}
+            "sequence": {"type": "integer", "required": True, "empty": False},
         }
         return res
 

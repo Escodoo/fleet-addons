@@ -1,6 +1,5 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 from odoo.addons.component.core import Component
-from odoo.addons.base_rest import restapi
 
 
 class VehicleTagService(Component):
@@ -94,9 +93,7 @@ class VehicleTagService(Component):
         }
 
     def _validator_create(self):
-        res = {
-            "description": {"type": "string", "required": True, "empty": False}
-        }
+        res = {"description": {"type": "string", "required": True, "empty": False}}
         return res
 
     def _validator_return_create(self):
@@ -119,6 +116,6 @@ class VehicleTagService(Component):
         res = {
             "id": vehicle.id,
             "description": vehicle.description,
-            "color": vehicle.color
+            "color": vehicle.color,
         }
         return res

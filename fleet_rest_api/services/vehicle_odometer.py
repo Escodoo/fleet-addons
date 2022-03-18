@@ -38,7 +38,9 @@ class VehicleOdometer(Component):
         """
         Create a new vehicle
         """
-        vehicle = self.env["fleet.vehicle.odometer"].create(self._prepare_params(params))
+        vehicle = self.env["fleet.vehicle.odometer"].create(
+            self._prepare_params(params)
+        )
         return self._to_json(vehicle)
 
     def update(self, _id, **params):

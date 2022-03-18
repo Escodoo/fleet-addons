@@ -279,7 +279,7 @@
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "required": [ "id", "name", "model"],
+                        "required": ["id", "name", "model"],
                         "properties": {
                           "name": {"type": "string"},
                           "car_value": {"type": "float"},
