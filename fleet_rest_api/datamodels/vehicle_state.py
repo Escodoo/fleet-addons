@@ -1,12 +1,12 @@
-from datetime import datetime
-from odoo.addons.datamodel.core import Datamodel
 from marshmallow import fields
+
+from odoo.addons.datamodel.core import Datamodel
 
 
 class VehicleState(Datamodel):
-    _name = 'vehicle.state'
-    _order = 'id'
-    _description = 'Vehicle State'
+    _name = "vehicle.state"
+    _order = "id"
+    _description = "Vehicle State"
 
     id = fields.Integer(required=True)
     name = fields.String(required=True)

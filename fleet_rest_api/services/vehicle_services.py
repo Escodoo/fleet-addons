@@ -112,7 +112,7 @@ class VehicleService(Component):
                     "description": {"type": "string"},
                     "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
                     "license_plate": {"type": "string"},
-                    "vin_sn": {"type": "string"}
+                    "vin_sn": {"type": "string"},
                 },
             },
             "active": {"coerce": to_bool, "type": "boolean"},

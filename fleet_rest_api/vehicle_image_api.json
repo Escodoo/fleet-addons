@@ -4,9 +4,7 @@
     "title": "vehicle_image REST services",
     "version": ""
   },
-  "servers": [
-    {"url": "http://localhost:8069/fleet_rest_api/private/vehicle_image"}
-  ],
+  "servers": [{"url": "http://localhost:8069/fleet_rest_api/private/vehicle_image"}],
   "paths": {
     "/{id}/get": {
       "get": {

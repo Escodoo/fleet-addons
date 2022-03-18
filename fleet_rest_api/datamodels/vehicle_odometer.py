@@ -1,6 +1,6 @@
-from datetime import datetime
-from odoo.addons.datamodel.core import Datamodel
 from marshmallow import fields
+
+from odoo.addons.datamodel.core import Datamodel
 
 
 class VehicleOdometer(Datamodel):
@@ -15,4 +15,3 @@ class VehicleOdometer(Datamodel):
     # driver_id = fields.Integer(required=True)
     # sequence = fields.Integer(required=True)
     write_date = fields.DateTime(required=True)
-    

@@ -1,5 +1,6 @@
-from odoo.addons.datamodel.core import Datamodel
 from marshmallow import fields
+
+from odoo.addons.datamodel.core import Datamodel
 
 
 class FleetServiceType(Datamodel):

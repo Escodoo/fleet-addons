@@ -28,6 +28,7 @@ class ServiceType(Component):
         for vehicle in vehicles:
             rows.append(self._to_json(vehicle))
         return res
+
     # pylint:disable=method-required-super
     def create(self, **params):
         """
@@ -80,14 +81,11 @@ class ServiceType(Component):
     # Validator
     def _validator_return_get(self):
         res = self._validator_create()
-        res.update(
-            {"id": {"type": "integer", "required": True, "empty": False}})
+        res.update({"id": {"type": "integer", "required": True, "empty": False}})
         return res
 
     def _validator_search(self):
-        return {"name":
-                {"type": "string", "nullable": False, "required": True}
-                }
+        return {"name": {"type": "string", "nullable": False, "required": True}}
 
     def _validator_return_search(self):
         return {
@@ -102,7 +100,7 @@ class ServiceType(Component):
     def _validator_create(self):
         res = {
             "name": {"type": "string", "required": True, "empty": False},
-            "category": {"type": "string", "required": True, "empty": False}
+            "category": {"type": "string", "required": True, "empty": False},
         }
         return res
 
