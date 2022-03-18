@@ -4,9 +4,9 @@ from odoo.addons.component.core import Component
 
 class ServiceType(Component):
     _inherit = "base.rest.service"
-    _name = "fleet.service.type"
+    _name = "service.type"
     _usage = "service_type"
-    _collection = "fleet.rest.public.services"
+    _collection = "fleet.rest.private.services"
     _description = """
    Service Type
     """
@@ -15,7 +15,7 @@ class ServiceType(Component):
         """
         Get vehicle's informations
         """
-        return _to_json(self._get(_id))
+        return self._to_json(self._get(_id))
 
     def search(self, name):
         """
@@ -26,16 +26,15 @@ class ServiceType(Component):
         rows = []
         res = {"count": len(vehicles), "rows": rows}
         for vehicle in vehicles:
-            rows.append(_to_json(vehicle))
+            rows.append(self._to_json(vehicle))
         return res
-
     # pylint:disable=method-required-super
     def create(self, **params):
         """
         Create a new vehicle
         """
-        vehicle = self.env["fleet.vehicle.log.service"].create(self._prepare_params(params))
-        return _to_json(vehicle)
+        vehicle = self.env["fleet.service.type"].create(self._prepare_params(params))
+        return self._to_json(vehicle)
 
     def update(self, _id, **params):
         """
@@ -43,7 +42,15 @@ class ServiceType(Component):
         """
         vehicle = self._get(_id)
         vehicle.write(self._prepare_params(params))
-        return _to_json(vehicle)
+        return self._to_json(vehicle)
+
+    def delete(self, _id):
+        """
+        Delete vehicle
+        """
+        vehicle = self._get(_id)
+        vehicle.unlink()
+        return {"response": "Vehicle deleted"}
 
     def archive(self, _id, **params):
         """
@@ -60,7 +67,7 @@ class ServiceType(Component):
     # from the controller.
 
     def _get(self, _id):
-        return self.env["fleet.service.type"].browse(_id)
+        return self.env["fleet.vehicle.state"].browse(_id)
 
     def _prepare_params(self, params):
         for key in ["model"]:
@@ -73,11 +80,14 @@ class ServiceType(Component):
     # Validator
     def _validator_return_get(self):
         res = self._validator_create()
-        res.update({"id": {"type": "integer", "required": True, "empty": False}})
+        res.update(
+            {"id": {"type": "integer", "required": True, "empty": False}})
         return res
 
     def _validator_search(self):
-        return {"name": {"type": "string", "nullable": False, "required": True}}
+        return {"name":
+                {"type": "string", "nullable": False, "required": True}
+                }
 
     def _validator_return_search(self):
         return {

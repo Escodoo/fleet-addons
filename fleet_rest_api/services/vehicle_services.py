@@ -104,7 +104,6 @@ class VehicleService(Component):
     def _validator_create(self):
         res = {
             "name": {"type": "string", "required": True, "empty": False},
-            "car_value": {"type": "float", "required": True, "empty": False},
             "model": {
                 "type": "dict",
                 "schema": {
@@ -112,62 +111,8 @@ class VehicleService(Component):
                     "name": {"type": "string"},
                     "description": {"type": "string"},
                     "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                    "company_id": {
-                        "type": "dict",
-                        "schema": {
-                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                        },
-                    },
                     "license_plate": {"type": "string"},
-                    "vin_sn": {"type": "string"},
-                    "driver_id": {
-                        "type": "dict",
-                        "schema": {
-                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                        },
-                    },
-                    "future_driver_id": {
-                        "type": "dict",
-                        "schema": {
-                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                        },
-                    },
-                    "model_id": {
-                        "type": "dict",
-                        "schema": {
-                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                        },
-                    },
-                    "manager_id": {
-                        "type": "dict",
-                        "schema": {
-                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                        },
-                    },
-                    "brand_id": {
-                        "type": "dict",
-                        "schema": {
-                            "id": {"type": "integer", "coerce": to_int, "nullable": True},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "active": {"type": "boolean", "coerce": to_bool, "nullable": True},
-                        },
-                    },
+                    "vin_sn": {"type": "string"}
                 },
             },
             "active": {"coerce": to_bool, "type": "boolean"},

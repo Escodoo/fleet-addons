@@ -1,4 +1,6 @@
+# Copyright 2018 ACSONE SA/NV
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+from odoo.addons.base_rest.components.service import to_bool, to_int
 from odoo.addons.component.core import Component
 
 
@@ -8,7 +10,9 @@ class VehicleOdometer(Component):
     _usage = "vehicle_odometer"
     _collection = "fleet.rest.private.services"
     _description = """
-   Service Type
+        Vehicle Services
+        Access to the vehicle services is only allowed to authenticated users.
+        If you are not authenticated go to <a href='/web/login'>Login</a>
     """
 
     def get(self, _id):
@@ -51,7 +55,7 @@ class VehicleOdometer(Component):
         """
         vehicle = self._get(_id)
         vehicle.unlink()
-        return {"response": "Vehicle %s deleted" % _id}
+        return {"response": "Vehicle deleted"}
 
     def archive(self, _id, **params):
         """
@@ -68,7 +72,7 @@ class VehicleOdometer(Component):
     # from the controller.
 
     def _get(self, _id):
-        return self.env["fleet.vehicle.state"].browse(_id)
+        return self.env["fleet.vehicle"].browse(_id)
 
     def _prepare_params(self, params):
         for key in ["model"]:
@@ -85,9 +89,7 @@ class VehicleOdometer(Component):
         return res
 
     def _validator_search(self):
-        return {"name":
-                    {"type": "string", "nullable": False, "required": True}
-                }
+        return {"name": {"type": "string", "nullable": False, "required": True}}
 
     def _validator_return_search(self):
         return {
@@ -102,11 +104,19 @@ class VehicleOdometer(Component):
     def _validator_create(self):
         res = {
             "name": {"type": "string", "required": True, "empty": False},
-            "sequence": {"type": "integer", "required": True, "empty": False},
-            "value": {"type": "float", "required": True, "empty": False},
-            "vehicle_id": {"type": "integer", "required": True, "empty": False},
-            "unit": {"type": "string", "required": True, "empty": False},
-            "driver_id": {"type": "integer", "required": True, "empty": False},
+            "model": {
+                "type": "dict",
+                "schema": {
+                    "id": {"type": "integer", "coerce": to_int, "nullable": True},
+                    "name": {"type": "string"},
+                    # "value": {"type": "integer", "coerce": to_int, "nullable": True},
+                    # "vehicle_id": {"type": "integer", "coerce": to_int, "nullable": True},
+                    # "unit": {"type": "string"},
+                    # "driver_id": {"type": "integer", "coerce": to_int, "nullable": True},
+                    # "sequence": {"type": "integer", "coerce": to_int, "nullable": True}
+                },
+            },
+            "active": {"coerce": to_bool, "type": "boolean"},
         }
         return res
 
@@ -130,10 +140,10 @@ class VehicleOdometer(Component):
         res = {
             "id": vehicle.id,
             "name": vehicle.name,
-            "sequence": vehicle.sequence,
-            "value": vehicle.value,
-            "vehicle_id": vehicle.vehicle_id.id,
-            "unit": vehicle.unit,
-            "driver_id": vehicle.driver_id.id,
+            # "value": vehicle.value,
+            # "vehicle_id": vehicle.vehicle_id.id,
+            # "unit": vehicle.unit,
+            # "driver_id": vehicle.driver_id.id,
+            # "sequence": vehicle.sequence,
         }
         return res
