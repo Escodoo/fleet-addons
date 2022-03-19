@@ -111,14 +111,8 @@ class VehicleOdometer(Component):
                 "schema": {
                     "id": {"type": "integer", "coerce": to_int, "nullable": True},
                     "name": {"type": "string"},
-                    # "value": {"type": "integer", "coerce": to_int, "nullable": True},
-                    # "vehicle_id": {"type": "integer", "coerce": to_int, "nullable": True},
-                    # "unit": {"type": "string"},
-                    # "driver_id": {"type": "integer", "coerce": to_int, "nullable": True},
-                    # "sequence": {"type": "integer", "coerce": to_int, "nullable": True}
                 },
             },
-            "active": {"coerce": to_bool, "type": "boolean"},
         }
         return res
 
@@ -142,10 +136,5 @@ class VehicleOdometer(Component):
         res = {
             "id": vehicle.id,
             "name": vehicle.name,
-            # "value": vehicle.value,
-            # "vehicle_id": vehicle.vehicle_id.id,
-            # "unit": vehicle.unit,
-            # "driver_id": vehicle.driver_id.id,
-            # "sequence": vehicle.sequence,
         }
         return res
