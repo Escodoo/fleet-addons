@@ -1,4 +1,6 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+from odoo.addons.base_rest import restapi
+from odoo.addons.base_rest_datamodel.restapi import Datamodel
 from odoo.addons.component.core import Component
 
 
@@ -11,116 +13,122 @@ class VehicleAssignationLogService(Component):
     Vehicle Log Services
     """
 
+    @restapi.method(
+        routes=[(["/<int:id>"], "GET")],
+        output_param=Datamodel("fleet.vehicle.assignation.log"),
+    )
     def get(self, _id):
         """
-        Get vehicle's informations
+        Get vehicle's assignation log information
         """
-        return self._to_json(self._get(_id))
+        record = self._get(_id)
+        VehicleAssignationLog = self.env.datamodels["fleet.vehicle.assignation.log"]
+        info = VehicleAssignationLog(partial=True)
+        info.id = record.id
+        info.vehicle_id = record.vehicle_id
+        info.driver_id = record.driver_id
+        info.data_start = record.date_start
+        info.data_end = record.date_end
+        return info
 
-    def search(self, description):
+    @restapi.method(
+        routes=[(["/", "/search"], "GET")],
+        input_param=Datamodel("fleet.vehicle.assignation.log.search.param"),
+        output_param=Datamodel("fleet.vehicle.assignation.log", is_list=True),
+    )
+    def search(self, record_search_param):
         """
-        Searh vehicle by name
+        Search for vehicles assignation log
         """
-        vehicles = self.env["fleet.vehicle.assignation.log"].name_search(description)
-        vehicles = self.env["fleet.vehicle.assignation.log"].browse(
-            [i[0] for i in vehicles]
-        )
-        rows = []
-        res = {"count": len(vehicles), "rows": rows}
-        for vehicle in vehicles:
-            rows.append(self._to_json(vehicle))
+        domain = []
+        if record_search_param.id:
+            domain.append(("id", "=", record_search_param.id))
+        if record_search_param.vehicle_id:
+            domain.append(("vehicle_id", "=", record_search_param.vehicle_id))
+        if record_search_param.driver_id:
+            domain.append(("driver_id", "=", record_search_param.driver_id))
+        res = []
+        VehicleAssignationLog = self.env.datamodels["fleet.vehicle.assignation.log"]
+        for p in self.env["fleet.vehicle.assignation.log"].search(domain):
+            res.append(
+                VehicleAssignationLog(
+                    id=p.id, vehicle_id=p.vehicle_id, driver_id=p.driver_id
+                )
+            )
         return res
 
+    @restapi.method(
+        routes=[(["/create"], "POST")],
+        input_param=Datamodel("fleet.vehicle.assignation.log.create.param"),
+    )
     # pylint:disable=method-required-super
-    def create(self, **params):
+    def create(self, values):
         """
-        Create a new vehicle
+        Create a new record
         """
-        vehicle = self.env["fleet.vehicle.assignation.log"].create(
-            self._prepare_params(params)
+        record = self.env["fleet.vehicle.assignation.log"].create(
+            self._prepare_params(values.dump())
         )
-        return self._to_json(vehicle)
+        return self._to_json(record)
 
-    def update(self, _id, **params):
+    @restapi.method(
+        routes=[(["/update"], "POST")],
+        input_param=Datamodel("fleet.vehicle.assignation.log.update.param"),
+    )
+    def update(self, values):
         """
-        Update vehicle informations
+        Update record informations
         """
-        vehicle = self._get(_id)
-        vehicle.write(self._prepare_params(params))
-        return self._to_json(vehicle)
+        record = self._get(values.id)
+        record.write(self._prepare_params(values.dump()))
+        return self._to_json(record)
 
-    def archive(self, _id, **params):
+    @restapi.method(
+        routes=[(["/delete/<int:id>"], "DELETE")],
+    )
+    def delete(self, _id):
         """
-        Archive the given vehicle. This method is an empty method, IOW it
-        don't update the vehicle. This method is part of the demo data to
-        illustrate that historically it's not mandatory to defined a schema
-        describing the content of the response returned by a method.
-        This kind of definition is DEPRECATED and will no more supported in
-        the future.
-        :param _id:
-        :param params:
-        :return:
+        Update record informations
         """
-        return {"response": "Method archive called with id %s" % _id}
-
-    # The following method are 'private' and should be never never NEVER call
-    # from the controller.
+        record = self._get(_id)
+        if record.exists():
+            record.unlink()
+            return {"response": "Record deleted"}
+        else:
+            return {"response": "No record found"}
 
     def _get(self, _id):
         return self.env["fleet.vehicle.assignation.log"].browse(_id)
 
     def _prepare_params(self, params):
-        for key in ["model"]:
-            if key in params:
-                val = params.pop(key)
-                if val.get("id"):
-                    params["%s_id" % key] = val["id"]
+        fields2match = self._get_fields2match()
+        for param_key, param_value in params.items():
+            if param_key in fields2match:
+                if type(params[param_key]) is str:
+                    params[param_key] = self.env[fields2match[param_key]]._name_search(
+                        params[param_value]
+                    )[0][0]
+                elif type(params[param_key]) is list:
+                    for create_tuple in params[param_key]:
+                        for tuple_k, tuple_v in create_tuple[2].items():
+                            if tuple_k in fields2match:
+                                create_tuple[2][tuple_k] = self.env[
+                                    fields2match[tuple_k]
+                                ]._name_search(params[tuple_v])[0][0]
         return params
 
-    # Validator
-    def _validator_return_get(self):
-        res = self._validator_create()
-        res.update({"id": {"type": "integer", "required": True, "empty": False}})
-        return res
-
-    def _validator_search(self):
-        return {"description": {"type": "string", "nullable": False, "required": True}}
-
-    def _validator_return_search(self):
-        return {
-            "count": {"type": "integer", "required": True},
-            "rows": {
-                "type": "list",
-                "required": True,
-                "schema": {"type": "dict", "schema": self._validator_return_get()},
-            },
-        }
-
-    def _validator_create(self):
-        res = {"description": {"type": "string", "required": True, "empty": False}}
-        return res
-
-    def _validator_return_create(self):
-        return self._validator_return_get()
-
-    def _validator_update(self):
-        res = self._validator_create()
-        for key in res:
-            if "required" in res[key]:
-                del res[key]["required"]
-        return res
-
-    def _validator_return_update(self):
-        return self._validator_return_get()
-
-    def _validator_archive(self):
-        return {}
-
-    def _to_json(self, vehicle):
+    def _to_json(self, record):
         res = {
-            "id": vehicle.id,
-            "description": vehicle.description,
-            "date_start": vehicle.date_start,
-            "date_end": vehicle.date_end,
+            "id": record.id,
+            "vehicle_id": record.vehicle_id.id,
+            "driver_id": record.driver_id.id,
+            "date_start": record.date_start,
+            "date_end": record.date_end,
         }
         return res
+
+    def _get_fields2match(self):
+        return {
+            "vehicle_id": "fleet.vehicle",
+            "driver_id": "res.partner",
+        }
