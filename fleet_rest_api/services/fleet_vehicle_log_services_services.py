@@ -8,18 +8,18 @@ from odoo.addons.base_rest_datamodel.restapi import Datamodel
 from odoo.addons.component.core import Component
 
 
-class FleetVehicleLogContractService(Component):
+class FleetVehicleLogServicesService(Component):
     _inherit = "base.fleet.rest.service"
-    _name = "fleet.vehicle.log.contract.service"
-    _usage = "fleet_vehicle_log_contract"
-    _expose_model = "fleet.vehicle.log.contract"
+    _name = "fleet.vehicle.log.services.service"
+    _usage = "fleet_vehicle_log_services"
+    _expose_model = "fleet.vehicle.log.services"
     _description = """
-    Fleet Vehicle Log Contract Services
+    Fleet Vehicle Log Services Services
     """
 
     @restapi.method(
         routes=[(["/<int:id>"], "GET")],
-        output_param=Datamodel("fleet.vehicle.log.contract.output"),
+        output_param=Datamodel("fleet.vehicle.log.services.output"),
     )
     def get(self, _id):
         record = self._get(_id)
@@ -27,21 +27,21 @@ class FleetVehicleLogContractService(Component):
 
     @restapi.method(
         routes=[(["/search"], "GET")],
-        input_param=Datamodel("fleet.vehicle.log.contract.search.input"),
-        output_param=Datamodel("fleet.vehicle.log.contract.search.output"),
+        input_param=Datamodel("fleet.vehicle.log.services.search.input"),
+        output_param=Datamodel("fleet.vehicle.log.services.search.output"),
     )
     def search(self, filters):
         domain = self._get_base_search_domain(filters)
         records = self.env[self._expose_model].search(domain)
         result = {"size": len(records), "data": self._to_json(records, many=True)}
-        return self.env.datamodels["fleet.vehicle.log.contract.search.output"].load(
+        return self.env.datamodels["fleet.vehicle.log.services.search.output"].load(
             result
         )
 
     @restapi.method(
         routes=[(["/create"], "POST")],
-        input_param=restapi.Datamodel("fleet.vehicle.log.contract.input"),
-        output_param=restapi.Datamodel("fleet.vehicle.log.contract.output"),
+        input_param=restapi.Datamodel("fleet.vehicle.log.services.input"),
+        output_param=restapi.Datamodel("fleet.vehicle.log.services.output"),
     )
     # pylint: disable=W8106
     def create(self, record):
@@ -51,7 +51,7 @@ class FleetVehicleLogContractService(Component):
 
     @restapi.method(
         routes=[(["/update"], "POST")],
-        input_param=Datamodel("fleet.vehicle.log.contract.input"),
+        input_param=Datamodel("fleet.vehicle.log.services.input"),
     )
     def update(self, values):
         record = self._get(values.id)
@@ -80,25 +80,20 @@ class FleetVehicleLogContractService(Component):
     def _json_parser(self):
         res = [
             "id",
-            "amount",
-            "date",
-            "name",
             "active",
-            "start_date",
-            "expiration_date",
-            "days_left",
-            "ins_ref",
-            "state",
+            "amount",
+            "description",
+            "odometer",
+            "date",
+            "inv_ref",
             "notes",
-            "cost_generated",
-            "cost_frequency",
+            "state",
             ("vehicle_id:vehicle", ["id", "name"]),
-            ("cost_subtype_id:type", ["id", "name"]),
             ("company_id:company", ["id", "name"]),
             ("currency_id:currency", ["id", "name"]),
-            ("user_id:responsible", ["id", "name"]),
-            ("insurer_id:insurer", ["id", "name"]),
             ("purchaser_id:purchaser", ["id", "name"]),
+            ("vendor_id:vendor", ["id", "name"]),
+            ("service_type_id:type", ["id", "name"]),
         ]
         return res
 
@@ -114,10 +109,10 @@ class FleetVehicleLogContractService(Component):
                 domain += [("vehicle_id", "=", filters.vehicle_id)]
             if filters.company_id:
                 domain += [("company_id", "=", filters.company_id)]
-            if filters.user_id:
-                domain += [("user_id", "=", filters.user_id)]
-            if filters.insurer_id:
-                domain += [("insurer_id", "=", filters.insurer_id)]
             if filters.purchaser_id:
                 domain += [("purchaser_id", "=", filters.purchaser_id)]
+            if filters.vendor_id:
+                domain += [("vendor_id", "=", filters.vendor_id)]
+            if filters.service_type_id:
+                domain += [("service_type_id", "=", filters.service_type_id)]
         return domain

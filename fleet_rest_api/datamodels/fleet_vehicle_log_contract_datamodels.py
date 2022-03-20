@@ -31,6 +31,7 @@ class FleetVehicleLogContractInput(Datamodel):
 
     vehicle_id = fields.Integer(required=False, allow_none=False)
     cost_subtype_id = fields.Integer(required=False, allow_none=False)
+    company_id = fields.Integer(required=False, allow_none=False)
     currency_id = fields.Integer(required=False, allow_none=False)
     user_id = fields.Integer(required=False, allow_none=False)
     insurer_id = fields.Integer(required=False, allow_none=False)
@@ -47,6 +48,7 @@ class FleetVehicleLogContractOutput(Datamodel):
     type = fields.NestedModel(
         "fleet.service.type.output", required=False, allow_none=True
     )
+    company = fields.NestedModel("res.company.output", required=False, allow_none=False)
     currency = fields.NestedModel(
         "res.currency.output", required=False, allow_none=False
     )
@@ -65,6 +67,7 @@ class FleetVehicleLogContractSearchInput(Datamodel):
     id = fields.Integer(required=False, allow_none=False)
     name = fields.String(required=False, allow_none=False)
     vehicle_id = fields.Integer(required=False, allow_none=False)
+    company_id = fields.Integer(required=False, allow_none=False)
     user_id = fields.Integer(required=False, allow_none=False)
     insurer_id = fields.Integer(required=False, allow_none=False)
     purchaser_id = fields.Integer(required=False, allow_none=False)
