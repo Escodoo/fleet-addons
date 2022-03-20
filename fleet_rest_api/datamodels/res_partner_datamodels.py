@@ -4,6 +4,7 @@
 from odoo.addons.datamodel import fields
 from odoo.addons.datamodel.core import Datamodel
 
+
 class ResPartnerInput(Datamodel):
     _name = "res.partner.input"
 

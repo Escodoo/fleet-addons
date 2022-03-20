@@ -20,9 +20,7 @@ class FleetVehicleAssignationLogInput(Datamodel):
     vehicle = fields.NestedModel(
         "fleet.vehicle.input", required=False, allow_none=False
     )
-    driver = fields.NestedModel(
-        "res.partner.input", required=False, allow_none=False
-    )
+    driver = fields.NestedModel("res.partner.input", required=False, allow_none=False)
 
 
 class FleetVehicleAssignationLogOutput(Datamodel):
@@ -34,8 +32,7 @@ class FleetVehicleAssignationLogOutput(Datamodel):
     vehicle = fields.NestedModel(
         "fleet.vehicle.output", required=False, allow_none=False
     )
-    driver = fields.NestedModel(
-        "res.partner.output", required=False, allow_none=False)
+    driver = fields.NestedModel("res.partner.output", required=False, allow_none=False)
 
 
 class FleetVehicleAssignationLogSearchInput(Datamodel):
@@ -51,5 +48,8 @@ class FleetVehicleAssignationLogSearchOutput(Datamodel):
 
     size = fields.Integer(required=True, allow_none=False)
     data = fields.NestedModel(
-        "fleet.vehicle.assignation.log.output", required=False, allow_none=True, many=True
+        "fleet.vehicle.assignation.log.output",
+        required=False,
+        allow_none=True,
+        many=True,
     )

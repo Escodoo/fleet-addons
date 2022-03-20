@@ -32,7 +32,9 @@ class FleetVehicleAssignationLogService(Component):
         domain = self._get_base_search_domain(filters)
         records = self.env[self._expose_model].search(domain)
         result = {"size": len(records), "data": self._to_json(records, many=True)}
-        return self.env.datamodels["fleet.vehicle.assignation.log.search.output"].load(result)
+        return self.env.datamodels["fleet.vehicle.assignation.log.search.output"].load(
+            result
+        )
 
     @restapi.method(
         routes=[(["/create"], "POST")],
@@ -78,8 +80,8 @@ class FleetVehicleAssignationLogService(Component):
             "id",
             "date_start",
             "date_end",
-            ("vehicle_id:vehicle", ["id","name"]),
-            ("driver_id:driver", ["id","name"]),
+            ("vehicle_id:vehicle", ["id", "name"]),
+            ("driver_id:driver", ["id", "name"]),
         ]
         return res
 

@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import _
-from odoo.exceptions import AccessError, MissingError
+from odoo.exceptions import MissingError
 from odoo.osv import expression
 
 from odoo.addons.component.core import AbstractComponent
@@ -39,9 +39,9 @@ class BaseFleetService(AbstractComponent):
 
     def _get_base_search_domain(self, filters):
         # if not self.env.context.get("authenticated_partner_id"):
-            # raise AccessError(
-            #     _("You should be connected to search for Helpdesk Tickets")
-            # )
+        #     raise AccessError(
+        #         _("You should be connected to search for Helpdesk Tickets")
+        #     )
         return []
 
     def _return_record(self, record):
