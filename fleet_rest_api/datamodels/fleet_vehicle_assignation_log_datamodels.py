@@ -17,10 +17,8 @@ class FleetVehicleAssignationLogInput(Datamodel):
 
     date_start = fields.Date()
     date_end = fields.Date()
-    vehicle = fields.NestedModel(
-        "fleet.vehicle.input", required=False, allow_none=False
-    )
-    driver = fields.NestedModel("res.partner.input", required=False, allow_none=False)
+    vehicle_id = fields.Integer(required=False, allow_none=False)
+    driver_id = fields.Integer(required=False, allow_none=False)
 
 
 class FleetVehicleAssignationLogOutput(Datamodel):
