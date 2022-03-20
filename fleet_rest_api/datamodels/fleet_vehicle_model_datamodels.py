@@ -12,16 +12,26 @@ class FleetVehicleModelBase(Datamodel):
 
     id = fields.Integer(required=False, allow_none=False)
     name = fields.String(required=False, allow_none=True)
+    active = fields.Boolean(required=False, allow_none=False)
+    vehicle_type = fields.String(required=False, allow_none=False)
 
 
 class FleetVehicleModelInput(Datamodel):
     _name = "fleet.vehicle.model.input"
     _inherit = ["fleet.vehicle.model.base"]
 
+    brand_id = fields.Integer(required=False, allow_none=False)
+    manager_id = fields.Integer(required=False, allow_none=False)
+
 
 class FleetVehicleModelOutput(Datamodel):
     _name = "fleet.vehicle.model.output"
     _inherit = ["fleet.vehicle.model.base"]
+
+    brand = fields.NestedModel(
+        "fleet.vehicle.model.brand.output", required=False, allow_none=False
+    )
+    manager = fields.NestedModel("res.users.output", required=False, allow_none=False)
 
 
 class FleetVehicleModelSearchInput(Datamodel):
@@ -29,6 +39,9 @@ class FleetVehicleModelSearchInput(Datamodel):
 
     id = fields.Integer(required=False, allow_none=False)
     name = fields.String(required=False, allow_none=False)
+    brand_id = fields.Integer(required=False, allow_none=False)
+    manager_id = fields.Integer(required=False, allow_none=False)
+    vehicle_type = fields.String(required=False, allow_none=False)
 
 
 class FleetVehicleModelSearchOutput(Datamodel):
