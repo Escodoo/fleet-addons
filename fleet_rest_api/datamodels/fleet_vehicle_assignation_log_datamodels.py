@@ -38,15 +38,6 @@ class FleetVehicleAssignationLogOutput(Datamodel):
         "res.partner.output", required=False, allow_none=False)
 
 
-class FleetVehicleAssignationLogSearchOutput(Datamodel):
-    _name = "fleet.vehicle.assignation.log.search.output"
-
-    size = fields.Integer(required=True, allow_none=False)
-    data = fields.NestedModel(
-        "fleet.vehicle.assignation.log.output", required=False, allow_none=True, many=True
-    )
-
-
 class FleetVehicleAssignationLogSearchInput(Datamodel):
     _name = "fleet.vehicle.assignation.log.search.input"
 
@@ -55,20 +46,10 @@ class FleetVehicleAssignationLogSearchInput(Datamodel):
     driver_id = fields.Integer(required=False, allow_none=False)
 
 
-class FleetVehicleAssignationLogCreateInput(Datamodel):
-    _name = "fleet.vehicle.assignation.log.create.input"
+class FleetVehicleAssignationLogSearchOutput(Datamodel):
+    _name = "fleet.vehicle.assignation.log.search.output"
 
-    vehicle_id = fields.Integer(required=False, allow_none=False)
-    driver_id = fields.Integer(required=False, allow_none=False)
-    date_start = fields.Date()
-    date_end = fields.Date()
-
-
-class FleetVehicleAssignationLogUpdateInput(Datamodel):
-    _name = "fleet.vehicle.assignation.log.update.input"
-
-    id = fields.Integer(required=False, allow_none=False)
-    vehicle_id = fields.Integer(required=False, allow_none=False)
-    driver_id = fields.Integer(required=False, allow_none=False)
-    date_start = fields.Date()
-    date_end = fields.Date()
+    size = fields.Integer(required=True, allow_none=False)
+    data = fields.NestedModel(
+        "fleet.vehicle.assignation.log.output", required=False, allow_none=True, many=True
+    )

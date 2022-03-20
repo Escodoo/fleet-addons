@@ -36,7 +36,7 @@ class FleetVehicleAssignationLogService(Component):
 
     @restapi.method(
         routes=[(["/create"], "POST")],
-        input_param=restapi.Datamodel("fleet.vehicle.assignation.log.create.input"),
+        input_param=restapi.Datamodel("fleet.vehicle.assignation.log.input"),
         output_param=restapi.Datamodel("fleet.vehicle.assignation.log.output"),
     )
     # pylint: disable=W8106
@@ -47,7 +47,7 @@ class FleetVehicleAssignationLogService(Component):
 
     @restapi.method(
         routes=[(["/update"], "POST")],
-        input_param=Datamodel("fleet.vehicle.assignation.log.update.input"),
+        input_param=Datamodel("fleet.vehicle.assignation.log.input"),
     )
     def update(self, values):
         record = self._get(values.id)
@@ -66,20 +66,11 @@ class FleetVehicleAssignationLogService(Component):
             return {"response": "No record found"}
 
     def _prepare_params(self, params):
-        fields2match = self._get_fields2match()
-        for param_key, param_value in params.items():
-            if param_key in fields2match:
-                if type(params[param_key]) is str:
-                    params[param_key] = self.env[fields2match[param_key]]._name_search(
-                        params[param_value]
-                    )[0][0]
-                elif type(params[param_key]) is list:
-                    for create_tuple in params[param_key]:
-                        for tuple_k, tuple_v in create_tuple[2].items():
-                            if tuple_k in fields2match:
-                                create_tuple[2][tuple_k] = self.env[
-                                    fields2match[tuple_k]
-                                ]._name_search(params[tuple_v])[0][0]
+        for key in ["vehicle", "driver"]:
+            if key in params:
+                val = params.pop(key)
+                if val.get("id"):
+                    params["%s_id" % key] = val["id"]
         return params
 
     def _json_parser(self):
@@ -91,12 +82,6 @@ class FleetVehicleAssignationLogService(Component):
             ("driver_id:driver", ["id","name"]),
         ]
         return res
-
-    def _get_fields2match(self):
-        return {
-            "vehicle_id": "fleet.vehicle",
-            "driver_id": "res.partner",
-        }
 
     def _get_base_search_domain(self, filters):
         domain = super()._get_base_search_domain(filters)
