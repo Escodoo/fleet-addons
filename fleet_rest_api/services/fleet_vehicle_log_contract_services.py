@@ -92,6 +92,7 @@ class FleetVehicleLogContractService(Component):
             "cost_frequency",
             ("vehicle_id:vehicle", ["id", "name"]),
             ("cost_subtype_id:type", ["id", "name"]),
+            ("currency_id:currency", ["id", "name"]),
             ("user_id:responsible", ["id", "name"]),
             ("insurer_id:insurer", ["id", "name"]),
             ("purchaser_id:purchaser", ["id", "name"]),
