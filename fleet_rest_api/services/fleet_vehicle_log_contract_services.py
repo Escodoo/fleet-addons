@@ -14,7 +14,7 @@ class FleetVehicleLogContractService(Component):
     _usage = "fleet_vehicle_log_contract"
     _expose_model = "fleet.vehicle.log.contract"
     _description = """
-    Vehicle Log Services
+    Fleet Vehicle Log Contract Services
     """
 
     @restapi.method(

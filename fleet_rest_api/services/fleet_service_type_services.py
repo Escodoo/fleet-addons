@@ -14,7 +14,7 @@ class FleetServiceTypeService(Component):
     _usage = "fleet_service_type"
     _expose_model = "fleet.service.type"
     _description = """
-    Vehicle Log Services
+    Fleet Service Type Services
     """
 
     @restapi.method(

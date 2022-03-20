@@ -14,7 +14,7 @@ class FleetVehicleAssignationLogService(Component):
     _usage = "fleet_vehicle_assignation_log"
     _expose_model = "fleet.vehicle.assignation.log"
     _description = """
-    Vehicle Log Services
+    Fleet Vehicle Assignation Log Services
     """
 
     @restapi.method(
