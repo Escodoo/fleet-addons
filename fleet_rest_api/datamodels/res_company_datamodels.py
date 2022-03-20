@@ -3,14 +3,18 @@
 # Copyright 2022 - TODAY, Eduardo Lima - Escodoo
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from marshmallow import fields
-
+from odoo.addons.datamodel import fields
 from odoo.addons.datamodel.core import Datamodel
 
 
-class FleetVehicleLogServices(Datamodel):
-    _name = "fleet.vehicle.log.services"
-    _description = "Services for vehicle log"
+class ResCompanyInput(Datamodel):
+    _name = "res.company.input"
 
     id = fields.Integer(required=True, allow_none=False)
-    description = fields.String(required=True, allow_none=False)
+
+
+class ResCompanyOutput(Datamodel):
+    _name = "res.company.output"
+
+    id = fields.Integer(required=True, allow_none=False)
+    name = fields.String(required=True, allow_none=False)
