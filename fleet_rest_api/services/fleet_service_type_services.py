@@ -91,5 +91,4 @@ class FleetServiceTypeService(Component):
                 domain.append(("name", "like", filters.name))
             if filters.category:
                 domain += [("category", "=", filters.category)]
-
         return domain
