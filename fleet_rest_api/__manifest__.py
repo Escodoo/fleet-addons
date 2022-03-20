@@ -1,13 +1,14 @@
-# Copyright 2022 - TODAY, Esodoo
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# Copyright 2022 - TODAY, Escodoo
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 
 {
     "name": "Fleet Rest Api",
     "summary": """
-        Fleet Rest API""",
+        Rest API for Fleet Management""",
     "version": "14.0.1.0.0",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "author": "Escodoo",
+    "maintainers": ["marcelsavegnago"],
     "website": "https://github.com/Escodoo/fleet-addons",
     "depends": [
         "fleet",
