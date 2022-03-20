@@ -76,7 +76,14 @@ class FleetVehicleModelService(Component):
         return params
 
     def _json_parser(self):
-        res = ["id", "name"]
+        res = [
+            "id",
+            "name",
+            "active",
+            "vehicle_type",
+            ("brand_id:brand", ["id", "name"]),
+            ("manager_id:manager", ["id", "name"]),
+        ]
         return res
 
     def _get_base_search_domain(self, filters):
@@ -87,4 +94,10 @@ class FleetVehicleModelService(Component):
                 domain += [("id", "=", filters.id)]
             if filters.name:
                 domain.append(("name", "like", filters.name))
+            if filters.name:
+                domain.append(("vehicle_type", "=", filters.vehicle_type))
+            if filters.brand_id:
+                domain += [("brand_id", "=", filters.brand_id)]
+            if filters.manager_id:
+                domain += [("manager_id", "=", filters.manager_id)]
         return domain
