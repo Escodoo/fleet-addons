@@ -94,6 +94,7 @@ class FleetVehicleLogContractService(Component):
             "cost_frequency",
             ("vehicle_id:vehicle", ["id", "name"]),
             ("cost_subtype_id:type", ["id", "name"]),
+            ("company_id:company", ["id", "name"]),
             ("currency_id:currency", ["id", "name"]),
             ("user_id:responsible", ["id", "name"]),
             ("insurer_id:insurer", ["id", "name"]),
@@ -111,6 +112,8 @@ class FleetVehicleLogContractService(Component):
                 domain.append(("name", "like", filters.name))
             if filters.vehicle_id:
                 domain += [("vehicle_id", "=", filters.vehicle_id)]
+            if filters.company_id:
+                domain += [("company_id", "=", filters.company_id)]
             if filters.user_id:
                 domain += [("user_id", "=", filters.user_id)]
             if filters.insurer_id:
