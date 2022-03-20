@@ -1,4 +1,5 @@
 from . import res_partner_datamodels
+from . import res_currency_datamodels
 from . import fleet_vehicle_datamodels
 from . import fleet_vehicle_assignation_log_datamodels
 from . import fleet_vehicle_log_contract_datamodels
