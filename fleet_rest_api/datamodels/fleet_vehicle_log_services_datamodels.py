@@ -41,21 +41,18 @@ class FleetVehicleLogServicesOutput(Datamodel):
     vehicle = fields.NestedModel(
         "fleet.vehicle.output", required=False, allow_none=False
     )
-    company = fields.NestedModel(
-        "res.company.output", required=False, allow_none=True
-    )
+    company = fields.NestedModel("res.company.output", required=False, allow_none=True)
     currency = fields.NestedModel(
         "res.currency.output", required=False, allow_none=False
     )
     purchaser = fields.NestedModel(
         "res.partner.output", required=False, allow_none=False
     )
-    vendor = fields.NestedModel(
-        "res.partner.output", required=False, allow_none=False
-    )
+    vendor = fields.NestedModel("res.partner.output", required=False, allow_none=False)
     type = fields.NestedModel(
         "fleet.service.type.output", required=False, allow_none=False
     )
+
 
 class FleetVehicleLogServicesSearchInput(Datamodel):
     _name = "fleet.vehicle.log.services.search.input"

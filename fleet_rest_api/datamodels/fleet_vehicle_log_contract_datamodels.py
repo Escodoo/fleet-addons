@@ -48,9 +48,7 @@ class FleetVehicleLogContractOutput(Datamodel):
     type = fields.NestedModel(
         "fleet.service.type.output", required=False, allow_none=True
     )
-    company = fields.NestedModel(
-        "res.company.output", required=False, allow_none=False
-    )
+    company = fields.NestedModel("res.company.output", required=False, allow_none=False)
     currency = fields.NestedModel(
         "res.currency.output", required=False, allow_none=False
     )
