@@ -6,18 +6,18 @@ from odoo.addons.base_rest_datamodel.restapi import Datamodel
 from odoo.addons.component.core import Component
 
 
-class FleetServiceTypeService(Component):
+class FleetVehicleStateService(Component):
     _inherit = "base.fleet.rest.service"
-    _name = "fleet.service.type.service"
-    _usage = "fleet_service_type"
-    _expose_model = "fleet.service.type"
+    _name = "fleet.vehicle.state.service"
+    _usage = "fleet_vehicle_state"
+    _expose_model = "fleet.vehicle.state"
     _description = """
     Vehicle Log Services
     """
 
     @restapi.method(
         routes=[(["/<int:id>"], "GET")],
-        output_param=Datamodel("fleet.service.type.output"),
+        output_param=Datamodel("fleet.vehicle.state.output"),
     )
     def get(self, _id):
         record = self._get(_id)
@@ -25,19 +25,19 @@ class FleetServiceTypeService(Component):
 
     @restapi.method(
         routes=[(["/search"], "GET")],
-        input_param=Datamodel("fleet.service.type.search.input"),
-        output_param=Datamodel("fleet.service.type.search.output"),
+        input_param=Datamodel("fleet.vehicle.state.search.input"),
+        output_param=Datamodel("fleet.vehicle.state.search.output"),
     )
     def search(self, filters):
         domain = self._get_base_search_domain(filters)
         records = self.env[self._expose_model].search(domain)
         result = {"size": len(records), "data": self._to_json(records, many=True)}
-        return self.env.datamodels["fleet.service.type.search.output"].load(result)
+        return self.env.datamodels["fleet.vehicle.state.search.output"].load(result)
 
     @restapi.method(
         routes=[(["/create"], "POST")],
-        input_param=restapi.Datamodel("fleet.service.type.input"),
-        output_param=restapi.Datamodel("fleet.service.type.output"),
+        input_param=restapi.Datamodel("fleet.vehicle.state.input"),
+        output_param=restapi.Datamodel("fleet.vehicle.state.output"),
     )
     # pylint: disable=W8106
     def create(self, record):
@@ -47,7 +47,7 @@ class FleetServiceTypeService(Component):
 
     @restapi.method(
         routes=[(["/update"], "POST")],
-        input_param=Datamodel("fleet.service.type.input"),
+        input_param=Datamodel("fleet.vehicle.state.input"),
     )
     def update(self, values):
         record = self._get(values.id)
@@ -74,11 +74,7 @@ class FleetServiceTypeService(Component):
         return params
 
     def _json_parser(self):
-        res = [
-            "id",
-            "name",
-            "category",
-        ]
+        res = ["id", "name", "sequence"]
         return res
 
     def _get_base_search_domain(self, filters):
@@ -89,6 +85,4 @@ class FleetServiceTypeService(Component):
                 domain += [("id", "=", filters.id)]
             if filters.name:
                 domain.append(("name", "like", filters.name))
-            if filters.category:
-                domain += [("category", "=", filters.category)]
         return domain

@@ -3,11 +3,11 @@ from . import fleet_vehicle_datamodels
 from . import fleet_vehicle_assignation_log_datamodels
 from . import fleet_vehicle_log_contract_datamodels
 from . import fleet_service_type_datamodels
+from . import fleet_vehicle_state_datamodels
 from . import model_info
 from . import vehicle_short_info
 from . import vehicle_info
 from . import vehicle_search_param
-from . import vehicle_state
 from . import vehicle_odometer
 from . import vehicle_log_services
 from . import vehicle_tag
