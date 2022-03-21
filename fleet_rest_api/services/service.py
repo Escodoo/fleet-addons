@@ -18,7 +18,7 @@ class EmptyOutput(Datamodel):
 class BaseFleetService(AbstractComponent):
     _inherit = "base.rest.service"
     _name = "base.fleet.rest.service"
-    _collection = "fleet.rest.private.services"
+    _collection = "fleet.rest.services"
     _expose_model = None
 
     def _to_json(self, record, many=False):

@@ -6,13 +6,7 @@
 from odoo.addons.base_rest.controllers import main
 
 
-class FleetRestPublicApiController(main.RestController):
-    _root_path = "/fleet_rest_api/public/"
-    _collection_name = "fleet.rest.public.services"
-    _default_auth = "public"
-
-
-class FleetRestPrivateApiController(main.RestController):
-    _root_path = "/fleet_rest_api/private/"
-    _collection_name = "fleet.rest.private.services"
-    _default_auth = "user"
+class FleetRestApiController(main.RestController):
+    _root_path = "/fleet_rest_api/"
+    _collection_name = "fleet.rest.services"
+    _default_auth = "api_key"
