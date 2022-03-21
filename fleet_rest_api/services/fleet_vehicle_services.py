@@ -68,7 +68,17 @@ class FleetVehicleService(Component):
             return {"response": "No record found"}
 
     def _prepare_params(self, params):
-        for key in ["vehicle", "insurer"]:
+        for key in [
+            "vehicle",
+            "company",
+            "currency",
+            "driver",
+            "future_driver",
+            "model",
+            "manager",
+            "brand",
+            "state",
+        ]:
             if key in params:
                 val = params.pop(key)
                 if val.get("id"):
@@ -90,6 +100,7 @@ class FleetVehicleService(Component):
             ("model_id:model", ["id", "name"]),
             ("manager_id:manager", ["id", "name"]),
             ("brand_id:brand", ["id", "name"]),
+            ("state_id:state", ["id", "name"]),
         ]
         return res
 

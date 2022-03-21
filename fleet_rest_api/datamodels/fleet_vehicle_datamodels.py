@@ -16,6 +16,30 @@ class FleetVehicleBase(Datamodel):
     active = fields.Boolean(required=False, allow_none=False)
     license_plate = fields.String(required=False, allow_none=True)
     vin_sn = fields.String(required=False, allow_none=True)
+    contract_count = fields.Integer(required=False, allow_none=True)
+    service_count = fields.Integer(required=False, allow_none=True)
+    odometer_count = fields.Integer(required=False, allow_none=True)
+    history_count = fields.Integer(required=False, allow_none=True)
+    next_assignation_date = fields.Date(required=False, allow_none=True)
+    acquisition_date = fields.Date(required=False, allow_none=True)
+    color = fields.String(required=False, allow_none=True)
+    location = fields.String(required=False, allow_none=True)
+    seats = fields.Integer(required=False, allow_none=True)
+    model_year = fields.String(required=False, allow_none=True)
+    doors = fields.Integer(required=False, allow_none=True)
+    odometer = fields.Float(required=False, allow_none=True)
+    odometer_unit = fields.String(required=False, allow_none=True)
+    transmissition = fields.String(required=False, allow_none=True)
+    fuel_type = fields.String(required=False, allow_none=True)
+    horsepower = fields.Integer(required=False, allow_none=True)
+    power = fields.Integer(required=False, allow_none=True)
+    co2 = fields.Float(required=False, allow_none=True)
+    contract_renewal_due_soon = fields.Boolean(required=False, allow_none=True)
+    contract_renewal_overdue = fields.Boolean(required=False, allow_none=True)
+    net_car_value = fields.Float(required=False, allow_none=True)
+    residual_value = fields.Float(required=False, allow_none=True)
+    plan_to_change_car = fields.Boolean(required=False, allow_none=True)
+    vehicle_type = fields.String(required=False, allow_none=True)
 
 
 class FleetVehicleInput(Datamodel):
@@ -29,6 +53,7 @@ class FleetVehicleInput(Datamodel):
     model_id = fields.Integer(required=False, allow_none=False)
     manager_id = fields.Integer(required=False, allow_none=False)
     brand_id = fields.Integer(required=False, allow_none=False)
+    state_id = fields.Integer(required=False, allow_none=False)
 
 
 class FleetVehicleOutput(Datamodel):
@@ -50,6 +75,9 @@ class FleetVehicleOutput(Datamodel):
     brand = fields.NestedModel(
         "fleet.vehicle.model.brand.output", required=False, allow_none=False
     )
+    state = fields.NestedModel(
+        "fleet.vehicle.state.output", required=False, allow_none=False
+    )
 
 
 class FleetVehicleSearchInput(Datamodel):
@@ -61,6 +89,7 @@ class FleetVehicleSearchInput(Datamodel):
     driver_id = fields.Integer(required=False, allow_none=False)
     model_id = fields.Integer(required=False, allow_none=False)
     brand_id = fields.Integer(required=False, allow_none=False)
+    state_id = fields.Integer(required=False, allow_none=False)
 
 
 class FleetVehicleSearchOutput(Datamodel):
