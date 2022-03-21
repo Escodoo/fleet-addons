@@ -8,13 +8,13 @@ from odoo.addons.base_rest_datamodel.restapi import Datamodel
 from odoo.addons.component.core import Component
 
 
-class VehicleOdometer(Component):
+class FleetVehicleOdometerBase(Component):
     _inherit = "base.fleet.rest.service"
-    _name = "fleet.vehicle.odometer"
+    _name = "fleet.vehicle.odometer.service"
     _usage = "fleet_vehicle_odometer"
     _expose_model = "fleet.vehicle.odometer"
     _description = """
-    Fleet Vehicle State Services
+    Fleet Vehicle Odometer Services
     """
 
     @restapi.method(
@@ -27,19 +27,19 @@ class VehicleOdometer(Component):
 
     @restapi.method(
         routes=[(["/search"], "GET")],
-        input_param=Datamodel("fleet.vehicle.odometer.search.input"),
-        output_param=Datamodel("fleet.vehicle.odometer.search.output"),
+        input_param=Datamodel("fleet.vehicle.odometer.service.search.input"),
+        output_param=Datamodel("fleet.vehicle.odometer.service.search.output"),
     )
     def search(self, filters):
         domain = self._get_base_search_domain(filters)
         records = self.env[self._expose_model].search(domain)
         result = {"size": len(records), "data": self._to_json(records, many=True)}
-        return self.env.datamodels["fleet.vehicle.odometer.search.output"].load(result)
+        return self.env.datamodels["fleet.vehicle.odometer.service.search.output"].load(result)
 
     @restapi.method(
         routes=[(["/create"], "POST")],
-        input_param=restapi.Datamodel("fleet.vehicle.odometer.input"),
-        output_param=restapi.Datamodel("fleet.vehicle.odometer.output"),
+        input_param=restapi.Datamodel("fleet.vehicle.odometer.service.input"),
+        output_param=restapi.Datamodel("fleet.vehicle.odometer.service.output"),
     )
     # pylint: disable=W8106
     def create(self, record):
@@ -49,7 +49,7 @@ class VehicleOdometer(Component):
 
     @restapi.method(
         routes=[(["/update"], "POST")],
-        input_param=Datamodel("fleet.vehicle.odometer.input"),
+        input_param=Datamodel("fleet.vehicle.odometer.service.input"),
     )
     def update(self, values):
         record = self._get(values.id)
