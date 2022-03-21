@@ -75,7 +75,9 @@ class FleetVehicleOutput(Datamodel):
     brand = fields.NestedModel(
         "fleet.vehicle.model.brand.output", required=False, allow_none=False
     )
-    state = fields.NestedModel("fleet.vehicle.state.output", required=False, allow_none=False)
+    state = fields.NestedModel(
+        "fleet.vehicle.state.output", required=False, allow_none=False
+    )
 
 
 class FleetVehicleSearchInput(Datamodel):

@@ -77,7 +77,7 @@ class FleetVehicleService(Component):
             "model",
             "manager",
             "brand",
-            "state"
+            "state",
         ]:
             if key in params:
                 val = params.pop(key)
@@ -100,7 +100,7 @@ class FleetVehicleService(Component):
             ("model_id:model", ["id", "name"]),
             ("manager_id:manager", ["id", "name"]),
             ("brand_id:brand", ["id", "name"]),
-            ("state_id:state", ["id", "name"])
+            ("state_id:state", ["id", "name"]),
         ]
         return res
 
