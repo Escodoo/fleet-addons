@@ -16,12 +16,10 @@
         "base_jsonify",
         "base_rest_datamodel",
         "component",
-        "auth_api_key"
+        "auth_api_key",
     ],
     "data": [],
-    "demo": [
-        "demo/auth_api_key_demo.xml"
-    ],
+    "demo": ["demo/auth_api_key_demo.xml"],
     "external_dependencies": {"python": ["jsondiff", "marshmallow"]},
     "installable": True,
 }

@@ -40,7 +40,9 @@ class FleetVehicleOutput(Datamodel):
         "res.currency.output", required=False, allow_none=False
     )
     driver = fields.NestedModel("res.partner.output", required=False, allow_none=False)
-    future_driver = fields.NestedModel("res.partner.output", required=False, allow_none=True)
+    future_driver = fields.NestedModel(
+        "res.partner.output", required=False, allow_none=True
+    )
     model = fields.NestedModel(
         "fleet.vehicle.model.output", required=False, allow_none=False
     )
