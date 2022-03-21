@@ -84,12 +84,12 @@ class FleetVehicleService(Component):
             "license_plate",
             "vin_sn",
             ("company_id:company", ["id", "name"]),
-            ("currency_id_id:currency", ["id", "name"]),
-            ("driver_id_id:driver", ["id", "name"]),
-            ("future_driver_id_id:future_driver", ["id", "name"]),
-            ("mode_id_id:model", ["id", "name"]),
-            ("manager_id_id:manager", ["id", "name"]),
-            ("brand_id_id:brand", ["id", "name"]),
+            ("currency_id:currency", ["id", "name"]),
+            ("driver_id:driver", ["id", "name"]),
+            ("future_driver_id:future_driver", ["id", "name"]),
+            ("model_id:model", ["id", "name"]),
+            ("manager_id:manager", ["id", "name"]),
+            ("brand_id:brand", ["id", "name"]),
         ]
         return res
 

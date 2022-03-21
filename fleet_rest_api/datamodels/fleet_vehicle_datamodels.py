@@ -25,7 +25,7 @@ class FleetVehicleInput(Datamodel):
     company_id = fields.Integer(required=False, allow_none=False)
     currency_id = fields.Integer(required=False, allow_none=False)
     driver_id = fields.Integer(required=False, allow_none=False)
-    future_driver_id = fields.Integer(required=False, allow_none=False)
+    future_driver_id = fields.Integer(required=False, allow_none=True)
     model_id = fields.Integer(required=False, allow_none=False)
     manager_id = fields.Integer(required=False, allow_none=False)
     brand_id = fields.Integer(required=False, allow_none=False)
@@ -40,7 +40,7 @@ class FleetVehicleOutput(Datamodel):
         "res.currency.output", required=False, allow_none=False
     )
     driver = fields.NestedModel("res.partner.output", required=False, allow_none=False)
-    future_driver = fields.NestedModel("res.partner.output", required=False, allow_none=False)
+    future_driver = fields.NestedModel("res.partner.output", required=False, allow_none=True)
     model = fields.NestedModel(
         "fleet.vehicle.model.output", required=False, allow_none=False
     )
