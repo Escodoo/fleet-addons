@@ -7,6 +7,6 @@ from . import fleet_vehicle_tag_services
 from . import fleet_vehicle_model_brand_services
 from . import fleet_vehicle_model_services
 from . import fleet_vehicle_log_services_services
-from . import vehicle_services
+from . import fleet_vehicle_services
 from . import vehicle_image_services
 from . import fleet_vehicle_odometer_service
