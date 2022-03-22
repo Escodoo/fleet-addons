@@ -120,4 +120,6 @@ class FleetVehicleService(Component):
                 domain += [("model_id", "=", filters.model_id)]
             if filters.brand_id:
                 domain += [("brand_id", "=", filters.brand_id)]
+            if filters.state_id:
+                domain += ["state_id", "=", filters.state_id]
         return domain
