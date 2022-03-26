@@ -7,6 +7,8 @@ from odoo.addons.base_rest import restapi
 from odoo.addons.base_rest_datamodel.restapi import Datamodel
 from odoo.addons.component.core import Component
 
+NESTEDMODELS = ["brand", "manager"]
+
 
 class FleetVehicleModelService(Component):
     _inherit = "base.fleet.rest.service"
@@ -43,8 +45,8 @@ class FleetVehicleModelService(Component):
     )
     # pylint: disable=W8106
     def create(self, record):
-        vals = self._prepare_params(record.dump())
-        record = self.env[self._expose_model].create(vals)
+        record = self._prepare_params(record.dump(), NESTEDMODELS)
+        record = self.env[self._expose_model].create(record)
         return self._return_record(record)
 
     @restapi.method(
@@ -53,7 +55,7 @@ class FleetVehicleModelService(Component):
     )
     def update(self, values):
         record = self._get(values.id)
-        record.write(self._prepare_params(values.dump()))
+        record.write(self._prepare_params(values.dump(), NESTEDMODELS))
         return self._to_json(record)
 
     @restapi.method(
@@ -66,14 +68,6 @@ class FleetVehicleModelService(Component):
             return {"response": "Record deleted"}
         else:
             return {"response": "No record found"}
-
-    def _prepare_params(self, params):
-        for key in ["vehicle", "insurer"]:
-            if key in params:
-                val = params.pop(key)
-                if val.get("id"):
-                    params["%s_id" % key] = val["id"]
-        return params
 
     def _json_parser(self):
         res = [
