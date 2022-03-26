@@ -50,3 +50,11 @@ class BaseFleetService(AbstractComponent):
         return self.env.datamodels["{}.output".format(self._expose_model)].load(
             self._to_json(record)
         )
+
+    def _prepare_params(self, params, nestedmodels):
+        for key in nestedmodels:
+            if key in params:
+                val = params.pop(key)
+                if val.get("id"):
+                    params["%s_id" % key] = val["id"]
+        return params
