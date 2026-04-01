@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* insurance_date_expiry
+#
+# Translators:
+# Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2024
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-08 18:27+0000\n"
+"PO-Revision-Date: 2024-10-08 18:27+0000\n"
+"Last-Translator: Wesley Oliveira, 2024"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields.selection,name:insurance_date_expiry.selection__fleet_vehicle__insurance_expiry_state__expired
+msgid "Expired"
+msgstr "Expirado"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields.selection,name:insurance_date_expiry.selection__fleet_vehicle__insurance_expiry_state__expiring_soon
+msgid "Expiring Soon"
+msgstr "Expira em breve"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__id
+msgid "ID"
+msgstr "ID"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__insurance_days_to_expire
+msgid "Insurance Days to Expire"
+msgstr "Dias para Expirar Seguro"
+
+#. module: insurance_date_expiry
+#: model_terms:ir.ui.view,arch_db:insurance_date_expiry.fleet_vehicle_view_search
+msgid "Insurance Expired"
+msgstr "Seguro Expirado"
+
+#. module: insurance_date_expiry
+#: model_terms:ir.ui.view,arch_db:insurance_date_expiry.fleet_vehicle_view_search
+msgid "Insurance Expiring Soon"
+msgstr "Seguro Expira em Breve"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__insurance_date_expiry
+msgid "Insurance Expiry Date"
+msgstr "Data de Expiração Seguro"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__insurance_expiry_state
+msgid "Insurance Expiry State"
+msgstr "Status Expiração Seguro"
+
+#. module: insurance_date_expiry
+#: model_terms:ir.ui.view,arch_db:insurance_date_expiry.fleet_vehicle_view_search
+msgid "Insurance Valid"
+msgstr "Seguro Válido"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle____last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields.selection,name:insurance_date_expiry.selection__fleet_vehicle__insurance_expiry_state__no_insurance
+msgid "No Insurance"
+msgstr "Sem Seguro"
+
+#. module: insurance_date_expiry
+#: model:ir.model.fields.selection,name:insurance_date_expiry.selection__fleet_vehicle__insurance_expiry_state__valid
+msgid "Valid"
+msgstr "Válido"
+
+#. module: insurance_date_expiry
+#: model:ir.model,name:insurance_date_expiry.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veículo"
