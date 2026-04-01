@@ -1,0 +1,27 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: v1.39
+_src_path: https://github.com/OCA/oca-addons-repo-template.git
+additional_ruff_rules: []
+ci: GitHub
+convert_readme_fragments_to_markdown: false
+enable_checklog_odoo: false
+generate_requirements_txt: false
+github_check_license: true
+github_ci_extra_env: {}
+github_enable_codecov: true
+github_enable_makepot: true
+github_enable_stale_action: true
+github_enforce_dev_status_compatibility: true
+include_wkhtmltopdf: false
+odoo_test_flavor: Both
+odoo_version: 16.0
+org_name: Escodoo
+org_slug: Escodoo
+rebel_module_groups: []
+repo_description: Fleet Odoo Addons
+repo_name: Fleet Odoo Addons
+repo_slug: fleet-addons
+repo_website: https://github.com/Escodoo/fleet-addons
+use_pyproject_toml: false
+use_ruff: true
+
