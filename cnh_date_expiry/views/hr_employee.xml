@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2024 - TODAY, Matheus Marques <matheus.marques@escodoo.com.br>
+    Copyright 2024 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <record id="view_employee_tree" model="ir.ui.view">
+        <field name="name">hr.employee.tree (in cnh_date_expiry)</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree" />
+        <field name="arch" type="xml">
+            <field name="work_location_id" position="after">
+                <field name="driver_license" optional="hide" />
+                <field name="driver_categ" optional="hide" />
+                <field
+                    name="expiration_date"
+                    string="CNH Expiration Date"
+                    optional="hide"
+                />
+                <field name="cnh_days_to_expire" optional="hide" />
+                <field
+                    name="cnh_expiry_state"
+                    optional="hide"
+                    widget="badge"
+                    decoration-success="cnh_expiry_state == 'valid'"
+                    decoration-warning="cnh_expiry_state == 'expiring_soon'"
+                    decoration-danger="cnh_expiry_state == 'expired'"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_employee_filter" model="ir.ui.view">
+        <field name="name">hr.employee.search (in cnh_date_expiry)</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="before">
+                <filter
+                    string="CNH Expired"
+                    name="cnh_expired"
+                    domain="[('cnh_expiry_state', '=', 'expired')]"
+                />
+                <filter
+                    string="CNH Expiring Soon"
+                    name="cnh_expiring_soon"
+                    domain="[('cnh_expiry_state', '=', 'expiring_soon')]"
+                />
+                <filter
+                    string="CNH Valid"
+                    name="cnh_valid"
+                    domain="[('cnh_expiry_state', '=', 'valid')]"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
