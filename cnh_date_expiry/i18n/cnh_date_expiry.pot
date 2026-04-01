@@ -2,16 +2,12 @@
 # This file contains the translation of the following modules:
 # 	* cnh_date_expiry
 #
-# Translators:
-# Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2024
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 17:00+0000\n"
-"PO-Revision-Date: 2024-10-08 17:00+0000\n"
-"Last-Translator: Wesley Oliveira, 2024Language-Team: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,34 +16,32 @@ msgstr ""
 #. module: cnh_date_expiry
 #: model_terms:ir.ui.view,arch_db:cnh_date_expiry.view_employee_tree
 msgid "CNH Expiration Date"
-msgstr "Data de Expiração CNH"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model_terms:ir.ui.view,arch_db:cnh_date_expiry.view_employee_filter
 msgid "CNH Expired"
-msgstr "CNH Expirada"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model_terms:ir.ui.view,arch_db:cnh_date_expiry.view_employee_filter
 msgid "CNH Expiring Soon"
-msgstr "CNH Expira em breve"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model_terms:ir.ui.view,arch_db:cnh_date_expiry.view_employee_filter
 msgid "CNH Valid"
-msgstr "CNH Válida"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model:ir.model.fields,field_description:cnh_date_expiry.field_hr_employee__cnh_days_to_expire
-#, fuzzy
 msgid "Cnh Days To Expire"
-msgstr "Dias para Expirar CNH"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model:ir.model.fields,field_description:cnh_date_expiry.field_hr_employee__cnh_expiry_state
-#, fuzzy
 msgid "Cnh Expiry State"
-msgstr "Status Expiração CNH"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model:ir.model,name:cnh_date_expiry.model_hr_employee
@@ -57,31 +51,19 @@ msgstr ""
 #. module: cnh_date_expiry
 #: model:ir.model.fields.selection,name:cnh_date_expiry.selection__hr_employee__cnh_expiry_state__expired
 msgid "Expired"
-msgstr "Expirada"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model:ir.model.fields.selection,name:cnh_date_expiry.selection__hr_employee__cnh_expiry_state__expiring_soon
 msgid "Expiring Soon"
-msgstr "Expira em breve"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model:ir.model.fields.selection,name:cnh_date_expiry.selection__hr_employee__cnh_expiry_state__no_cnh
 msgid "No CNH"
-msgstr "Sem CNH"
+msgstr ""
 
 #. module: cnh_date_expiry
 #: model:ir.model.fields.selection,name:cnh_date_expiry.selection__hr_employee__cnh_expiry_state__valid
 msgid "Valid"
-msgstr "Válida"
-
-#~ msgid "Description"
-#~ msgstr "Descrição"
-
-#~ msgid "Display Name"
-#~ msgstr "Nome exibido"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Última modificação em"
+msgstr ""
