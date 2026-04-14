@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2024 - TODAY, Matheus Marques <matheus.marques@escodoo.com.br>
+    Copyright 2024 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <record id="fleet_vehicle_form_view" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form (in insurance_date_expiry)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <field name="vin_sn" position="before">
+                <field name="insurance_date_expiry" />
+            </field>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.tree (in insurance_date_expiry)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree" />
+        <field name="arch" type="xml">
+            <field name="activity_exception_decoration" position="after">
+                <field name="insurance_date_expiry" optional="hide" />
+                <field name="insurance_days_to_expire" optional="hide" />
+                <field
+                    name="insurance_expiry_state"
+                    optional="hide"
+                    widget="badge"
+                    decoration-success="insurance_expiry_state == 'valid'"
+                    decoration-warning="insurance_expiry_state == 'expiring_soon'"
+                    decoration-danger="insurance_expiry_state == 'expired'"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.search (in insurance_date_expiry)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="before">
+                <filter
+                    string="Insurance Expired"
+                    name="insurance_expired"
+                    domain="[('insurance_expiry_state', '=', 'expired')]"
+                />
+                <filter
+                    string="Insurance Expiring Soon"
+                    name="insurance_expiring_soon"
+                    domain="[('insurance_expiry_state', '=', 'expiring_soon')]"
+                />
+                <filter
+                    string="Insurance Valid"
+                    name="insurance_valid"
+                    domain="[('insurance_expiry_state', '=', 'valid')]"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
