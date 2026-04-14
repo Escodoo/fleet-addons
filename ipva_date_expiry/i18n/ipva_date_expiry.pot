@@ -2,16 +2,12 @@
 # This file contains the translation of the following modules:
 # 	* ipva_date_expiry
 #
-# Translators:
-# Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2024
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 19:15+0000\n"
-"PO-Revision-Date: 2024-10-08 19:15+0000\n"
-"Last-Translator: Wesley Oliveira, 2024Language-Team: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -20,66 +16,54 @@ msgstr ""
 #. module: ipva_date_expiry
 #: model:ir.model.fields.selection,name:ipva_date_expiry.selection__fleet_vehicle__ipva_expiry_state__expired
 msgid "Expired"
-msgstr "Expirado"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model.fields.selection,name:ipva_date_expiry.selection__fleet_vehicle__ipva_expiry_state__expiring_soon
 msgid "Expiring Soon"
-msgstr "Expira em breve"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model_terms:ir.ui.view,arch_db:ipva_date_expiry.fleet_vehicle_view_search
 msgid "IPVA Expired"
-msgstr "IPVA Expirado"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model_terms:ir.ui.view,arch_db:ipva_date_expiry.fleet_vehicle_view_search
 msgid "IPVA Expiring Soon"
-msgstr "IPVA Expira em Breve"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model_terms:ir.ui.view,arch_db:ipva_date_expiry.fleet_vehicle_view_search
 msgid "IPVA Valid"
-msgstr "IPVA Válido"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model.fields,field_description:ipva_date_expiry.field_fleet_vehicle__ipva_days_to_expire
-#, fuzzy
 msgid "Ipva Days To Expire"
-msgstr "Dias para Expirar IPVA"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model.fields,field_description:ipva_date_expiry.field_fleet_vehicle__ipva_expiry_date
-#, fuzzy
 msgid "Ipva Expiry Date"
-msgstr "Data de Expiração IPVA"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model.fields,field_description:ipva_date_expiry.field_fleet_vehicle__ipva_expiry_state
-#, fuzzy
 msgid "Ipva Expiry State"
-msgstr "Status de Expiração IPVA"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model.fields.selection,name:ipva_date_expiry.selection__fleet_vehicle__ipva_expiry_state__no_ipva
 msgid "No IPVA"
-msgstr "Sem IPVA"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model.fields.selection,name:ipva_date_expiry.selection__fleet_vehicle__ipva_expiry_state__valid
 msgid "Valid"
-msgstr "Válido"
+msgstr ""
 
 #. module: ipva_date_expiry
 #: model:ir.model,name:ipva_date_expiry.model_fleet_vehicle
 msgid "Vehicle"
-msgstr "Veículo"
-
-#~ msgid "Display Name"
-#~ msgstr "Nome exibido"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Last Modified on"
-#~ msgstr "Última modificação em"
+msgstr ""
