@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* national_registration_expiry
+#
+# Translators:
+# Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2024
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-08 19:36+0000\n"
+"PO-Revision-Date: 2024-10-08 19:36+0000\n"
+"Last-Translator: Wesley Oliveira, 2024"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle__display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields.selection,name:national_registration_expiry.selection__fleet_vehicle__renavam_expiry_state__expired
+msgid "Expired"
+msgstr "Expirado"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields.selection,name:national_registration_expiry.selection__fleet_vehicle__renavam_expiry_state__expiring_soon
+msgid "Expiring Soon"
+msgstr "Expira em breve"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle__id
+msgid "ID"
+msgstr "ID"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle____last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields.selection,name:national_registration_expiry.selection__fleet_vehicle__renavam_expiry_state__no_renavam
+msgid "No Renavam"
+msgstr "Sem Renavam"
+
+#. module: national_registration_expiry
+#: model_terms:ir.ui.view,arch_db:national_registration_expiry.fleet_vehicle_view_form_inherit
+msgid "Renavam"
+msgstr "Renavam"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle__renavam_days_to_expire
+msgid "Renavam Days to Expire"
+msgstr "Dias para Expirar Renavam"
+
+#. module: national_registration_expiry
+#: model_terms:ir.ui.view,arch_db:national_registration_expiry.fleet_vehicle_view_search
+msgid "Renavam Expired"
+msgstr "Renavam Expirado"
+
+#. module: national_registration_expiry
+#: model_terms:ir.ui.view,arch_db:national_registration_expiry.fleet_vehicle_view_search
+msgid "Renavam Expiring Soon"
+msgstr "Renavam Expira em Breve"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle__renavam_expiry_date
+msgid "Renavam Expiry Date"
+msgstr "Data de Expiração Renavam"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle__renavam_expiry_state
+msgid "Renavam Expiry State"
+msgstr "Status de Expiração Renavam"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields,field_description:national_registration_expiry.field_fleet_vehicle__renavam_number
+msgid "Renavam Number"
+msgstr "Número Renavam"
+
+#. module: national_registration_expiry
+#: model_terms:ir.ui.view,arch_db:national_registration_expiry.fleet_vehicle_view_search
+msgid "Renavam Valid"
+msgstr "Renavam Válido"
+
+#. module: national_registration_expiry
+#: model:ir.model.fields.selection,name:national_registration_expiry.selection__fleet_vehicle__renavam_expiry_state__valid
+msgid "Valid"
+msgstr "Válido"
+
+#. module: national_registration_expiry
+#: model:ir.model,name:national_registration_expiry.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veículo"

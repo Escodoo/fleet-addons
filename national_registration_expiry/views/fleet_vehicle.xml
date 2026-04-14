@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2024 - TODAY, Matheus Marques <matheus.marques@escodoo.com.br>
+    Copyright 2024 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_view_form_inherit">
+        <field name="name">fleet.vehicle.form (in national_registration_expiry)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="renavam_number" />
+                <field name="renavam_expiry_date" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.tree (in national_registration_expiry)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree" />
+        <field name="arch" type="xml">
+            <field name="activity_exception_decoration" position="after">
+                <field name="renavam_number" optional="hide" />
+                <field name="renavam_expiry_date" optional="hide" />
+                <field name="renavam_days_to_expire" optional="hide" />
+                <field
+                    name="renavam_expiry_state"
+                    optional="hide"
+                    widget="badge"
+                    decoration-success="renavam_expiry_state == 'valid'"
+                    decoration-warning="renavam_expiry_state == 'expiring_soon'"
+                    decoration-danger="renavam_expiry_state == 'expired'"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_view_search" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.search (in national_registration_expiry)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="before">
+                <filter
+                    string="Renavam Expired"
+                    name="renavam_expired"
+                    domain="[('renavam_expiry_state', '=', 'expired')]"
+                />
+                <filter
+                    string="Renavam Expiring Soon"
+                    name="renavam_expiring_soon"
+                    domain="[('renavam_expiry_state', '=', 'expiring_soon')]"
+                />
+                <filter
+                    string="Renavam Valid"
+                    name="renavam_valid"
+                    domain="[('renavam_expiry_state', '=', 'valid')]"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
