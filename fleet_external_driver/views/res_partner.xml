@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="age" />
+                <field name="gender" />
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Driver Info" name="driver_info">
+                    <group>
+                        <group string="Driver Status">
+                            <field name="is_external" />
+                            <field name="is_training" />
+                            <field name="is_active" />
+                        </group>
+                        <group string="Driver Type">
+                            <field name="driver_type" />
+                            <field
+                                name="driver_license_number"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                            <field
+                                name="driver_license_type"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                            <field
+                                name="driver_license_expiration_date"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                            <field
+                                name="driver_license_file"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                            <field
+                                name="distance_traveled"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                            <field
+                                name="distance_traveled_uom"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                            <field
+                                name="driving_experience_years"
+                                attrs="{'invisible': [('driver_type', '!=', 'terrestrial')]}"
+                            />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="action_fleet_driver" model="ir.actions.act_window">
+        <field name="name">Drivers</field>
+        <field name="res_model">res.partner</field>
+        <field
+            name="domain"
+        >[('is_company', '=', False),('driver_type', '!=', False)]</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem
+        action="action_fleet_driver"
+        parent="fleet.fleet_vehicles"
+        id="fleet_driver_menu"
+        groups="fleet.fleet_group_user"
+        sequence="100"
+    />
+</odoo>
