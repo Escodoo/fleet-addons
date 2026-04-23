@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="view_partner_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.tree.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="driver_license_number" optional="hide" />
+                <field name="driver_license_type" optional="hide" />
+                <field name="driver_license_expiration_date" optional="hide" />
+                <field name="driver_license_days_to_expire" optional="hide" />
+                <field
+                    name="driver_license_expiry_state"
+                    optional="hide"
+                    widget="badge"
+                    decoration-success="driver_license_expiry_state == 'valid'"
+                    decoration-warning="driver_license_expiry_state == 'expiring_soon'"
+                    decoration-danger="driver_license_expiry_state == 'expired'"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_inherit" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="before">
+                <filter
+                    string="License Expired"
+                    name="license_expired"
+                    domain="[('driver_license_expiry_state', '=', 'expired')]"
+                />
+                <filter
+                    string="License Expiring Soon"
+                    name="license_expiring_soon"
+                    domain="[('driver_license_expiry_state', '=', 'expiring_soon')]"
+                />
+                <filter
+                    string="License Valid"
+                    name="license_valid"
+                    domain="[('driver_license_expiry_state', '=', 'valid')]"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
