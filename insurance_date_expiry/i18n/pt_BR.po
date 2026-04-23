@@ -31,7 +31,7 @@ msgstr "Expira em breve"
 #: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__insurance_date_expiry
 #, fuzzy
 msgid "Insurance Date Expiry"
-msgstr "Dias para Expirar Seguro"
+msgstr "Data de Expiração Seguro"
 
 #. module: insurance_date_expiry
 #: model:ir.model.fields,field_description:insurance_date_expiry.field_fleet_vehicle__insurance_days_to_expire
