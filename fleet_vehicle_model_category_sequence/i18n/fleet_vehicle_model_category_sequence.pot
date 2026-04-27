@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-20 20:52+0000\n"
-"PO-Revision-Date: 2026-04-20 20:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,7 +26,7 @@ msgstr ""
 #. module: fleet_vehicle_model_category_sequence
 #: model:ir.model,name:fleet_vehicle_model_category_sequence.model_fleet_vehicle_model_category
 msgid "Category of the model"
-msgstr "Categoria do modelo"
+msgstr ""
 
 #. module: fleet_vehicle_model_category_sequence
 #: model:ir.model.fields,help:fleet_vehicle_model_category_sequence.field_fleet_vehicle_model_category__code
@@ -48,7 +46,7 @@ msgstr ""
 #. module: fleet_vehicle_model_category_sequence
 #: model:ir.model,name:fleet_vehicle_model_category_sequence.model_fleet_vehicle
 msgid "Vehicle"
-msgstr "Veículo"
+msgstr ""
 
 #. module: fleet_vehicle_model_category_sequence
 #: model:ir.model.fields,field_description:fleet_vehicle_model_category_sequence.field_fleet_vehicle__code
