@@ -1,0 +1,68 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_model_category_sequence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 20:52+0000\n"
+"PO-Revision-Date: 2026-04-20 20:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.fields,help:fleet_vehicle_model_category_sequence.field_fleet_vehicle__code
+msgid "Automatically generated code based on the selected vehicle category."
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.fields,field_description:fleet_vehicle_model_category_sequence.field_fleet_vehicle_model_category__code
+msgid "Category Code"
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model,name:fleet_vehicle_model_category_sequence.model_fleet_vehicle_model_category
+msgid "Category of the model"
+msgstr "Categoria do modelo"
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.fields,help:fleet_vehicle_model_category_sequence.field_fleet_vehicle_model_category__code
+msgid "Code used as prefix for the vehicle sequence. Example: CB"
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.fields,help:fleet_vehicle_model_category_sequence.field_fleet_vehicle_model_category__sequence_id
+msgid "Sequence automatically created for this vehicle category."
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.constraint,message:fleet_vehicle_model_category_sequence.constraint_fleet_vehicle_model_category_fleet_vehicle_model_category_code_uniq
+msgid "The vehicle category code must be unique."
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model,name:fleet_vehicle_model_category_sequence.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.fields,field_description:fleet_vehicle_model_category_sequence.field_fleet_vehicle__code
+msgid "Vehicle Code"
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#: model:ir.model.fields,field_description:fleet_vehicle_model_category_sequence.field_fleet_vehicle_model_category__sequence_id
+msgid "Vehicle Sequence"
+msgstr ""
+
+#. module: fleet_vehicle_model_category_sequence
+#. odoo-python
+#: code:addons/fleet_vehicle_model_category_sequence/models/fleet_vehicle_model_category.py:0
+#, python-format
+msgid "Vehicle Sequence - %s"
+msgstr ""
