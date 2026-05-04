@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026, Escodoo
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="view_fuel_consume_confirm_wizard_form" model="ir.ui.view">
+        <field name="name">fuel.consume.confirm.wizard.form</field>
+        <field name="model">fuel.consume.confirm.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Confirm Fuel Consumption">
+                <sheet>
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Confirmar operação de consumo de combustível?</strong>
+                        <p>Verifique as informações abaixo antes de confirmar.</p>
+                    </div>
+                    <group>
+                        <group string="Vehicle">
+                            <field name="vehicle_id" />
+                            <field name="driver_id" />
+                            <field name="odometer_value" />
+                        </group>
+                        <group string="Operation">
+                            <field name="picking_type_id" />
+                            <field name="location_id" />
+                            <field name="product_id" />
+                            <field name="product_uom_qty" />
+                            <field name="product_uom_id" invisible="1" />
+                        </group>
+                    </group>
+                    <group string="Analytic">
+                        <field
+                            name="analytic_distribution"
+                            string="Analytic Distribution"
+                            widget="analytic_distribution"
+                            options="{'business_domain': 'stock_move'}"
+                            readonly="1"
+                        />
+                    </group>
+                </sheet>
+                <footer>
+                    <button
+                        name="action_confirm"
+                        string="Confirm"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
