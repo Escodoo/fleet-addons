@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_preventive_maintenance
+#
+# Translators:
+# Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2026
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 21:53+0000\n"
+"PO-Revision-Date: 2026-08-31 21:53+0000\n"
+"Last-Translator: Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2026\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__activity_id
+msgid "Activity"
+msgstr "Atividade"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__alert_date
+msgid "Alert Date"
+msgstr "Data do Alerta"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,help:fleet_preventive_maintenance.field_fleet_vehicle__preventive_interval
+#: model:ir.model.fields,help:fleet_preventive_maintenance.field_fleet_vehicle_model__preventive_interval
+msgid ""
+"Distance between preventive maintenances, in the odometer unit of the "
+"vehicle. A new alert is raised once the odometer advances this much "
+"since the last alert. Leave empty to disable the alerts."
+msgstr ""
+"Distância entre manutenções preventivas, na unidade do odômetro do "
+"veículo. Um novo alerta é gerado quando o odômetro avança essa distância "
+"desde o último alerta. Deixe vazio para desativar os alertas."
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model,name:fleet_preventive_maintenance.model_fleet_preventive_maintenance_alert
+msgid "Fleet Preventive Maintenance Alert"
+msgstr "Alerta de Manutenção Preventiva da Frota"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model,name:fleet_preventive_maintenance.model_fleet_vehicle_model
+msgid "Model of a vehicle"
+msgstr "Modelo de um veículo"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__odometer_id
+msgid "Odometer"
+msgstr "Odômetro"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__odometer_value
+msgid "Odometer Value"
+msgstr "Valor do Odômetro"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model,name:fleet_preventive_maintenance.model_fleet_vehicle_odometer
+msgid "Odometer log for a vehicle"
+msgstr "Registro de odômetro de um veículo"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_vehicle__preventive_interval
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_vehicle_model__preventive_interval
+msgid "Preventive Interval"
+msgstr "Intervalo Preventivo"
+
+#. module: fleet_preventive_maintenance
+#: model_terms:ir.ui.view,arch_db:fleet_preventive_maintenance.fleet_vehicle_model_view_form_inherit_preventive_maintenance
+#: model_terms:ir.ui.view,arch_db:fleet_preventive_maintenance.fleet_vehicle_view_form_inherit_preventive_maintenance
+msgid "Preventive Maintenance"
+msgstr "Manutenção Preventiva"
+
+#. module: fleet_preventive_maintenance
+#. odoo-python
+#: code:addons/fleet_preventive_maintenance/models/preventive_maintenance_alert.py:0
+#: model:mail.activity.type,name:fleet_preventive_maintenance.mail_activity_type_preventive_maintenance_alert
+#: model:mail.activity.type,summary:fleet_preventive_maintenance.mail_activity_type_preventive_maintenance_alert
+#, python-format
+msgid "Preventive Maintenance Alert"
+msgstr "Alerta de Manutenção Preventiva"
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_vehicle__preventive_maintenance_alert_ids
+msgid "Preventive Maintenance Alerts"
+msgstr "Alertas de Manutenção Preventiva"
+
+#. module: fleet_preventive_maintenance
+#. odoo-python
+#: code:addons/fleet_preventive_maintenance/models/preventive_maintenance_alert.py:0
+#, python-format
+msgid ""
+"The vehicle has reached the preventive maintenance interval. Please "
+"schedule a preventive maintenance service."
+msgstr ""
+"O veículo atingiu o intervalo de manutenção preventiva. Por favor, "
+"agende um serviço de manutenção preventiva."
+
+#. module: fleet_preventive_maintenance
+#: model:ir.model,name:fleet_preventive_maintenance.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_preventive_maintenance.field_fleet_preventive_maintenance_alert__vehicle_id
+msgid "Vehicle"
+msgstr "Veículo"
