@@ -34,6 +34,8 @@ class FleetVehicle(models.Model):
             )
             sequence_id = category_id.sequence_id
             if sequence_id:
-                vals["code"] = sequence_id.next_by_id()
+                for vehicle in self:
+                    if not vehicle.code:
+                        vehicle.code = sequence_id.next_by_id()
 
         return super().write(vals)

@@ -76,8 +76,8 @@ class TestFleetVehicleLogic(common.TransactionCase):
             "Since it's the first, the code should be VAN1 (padding 0).",
         )
 
-    def test_vehicle_code_generation_on_write(self):
-        """Tests if the vehicle code changes when the category is updated"""
+    def test_vehicle_code_kept_on_write(self):
+        """Tests that the vehicle code is kept when the category is updated"""
         cat_a = self.category_model.create({"name": "A", "code": "AAA"})
         cat_b = self.category_model.create({"name": "B", "code": "BBB"})
 
@@ -93,8 +93,8 @@ class TestFleetVehicleLogic(common.TransactionCase):
         vehicle.write({"category_id": cat_b.id})
         self.assertEqual(
             vehicle.code,
-            "BBB1",
-            "The code should have been regenerated with the new category.",
+            "AAA1",
+            "The code should be kept since the vehicle already had one.",
         )
 
     def test_create_multi_category(self):
