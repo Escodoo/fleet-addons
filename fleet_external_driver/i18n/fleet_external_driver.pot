@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-16 15:53+0000\n"
-"PO-Revision-Date: 2026-04-16 15:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,7 +42,7 @@ msgstr ""
 #. module: fleet_external_driver
 #: model:ir.model,name:fleet_external_driver.model_res_partner
 msgid "Contact"
-msgstr "Contato"
+msgstr ""
 
 #. module: fleet_external_driver
 #: model:ir.model.fields.selection,name:fleet_external_driver.selection__res_partner__driver_license_type__d
