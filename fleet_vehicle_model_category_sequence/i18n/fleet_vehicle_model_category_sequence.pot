@@ -50,6 +50,7 @@ msgstr ""
 
 #. module: fleet_vehicle_model_category_sequence
 #: model:ir.model.fields,field_description:fleet_vehicle_model_category_sequence.field_fleet_vehicle__code
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_model_category_sequence.fleet_vehicle_view_search
 msgid "Vehicle Code"
 msgstr ""
 
