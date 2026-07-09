@@ -17,7 +17,19 @@ Fleet Odoo Addons
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[cnh_date_expiry](cnh_date_expiry/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | Module to track driver's license expiration
+[fleet_external_driver](fleet_external_driver/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> | Fleet External Driver
+[fleet_external_driver_license_expiry](fleet_external_driver_license_expiry/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> | Module to track external driver's license expiration
+[fleet_vehicle_model_category_sequence](fleet_vehicle_model_category_sequence/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> | Fleet Vehicle Model Category Sequence
+[fleet_vehicle_purchase_link](fleet_vehicle_purchase_link/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> | Link fleet vehicles to purchase order lines
+[fuel_stock_consume](fuel_stock_consume/) | 16.0.1.0.0 |  | Module to consume fuel via stock picking and automatically record odometer readings
+[insurance_date_expiry](insurance_date_expiry/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | Module to track vehicle insurance expiry
+[ipva_date_expiry](ipva_date_expiry/) | 16.0.1.0.0 | <a href='https://github.com/WesleyOliveira98'><img src='https://github.com/WesleyOliveira98.png' width='32' height='32' style='border-radius:50%;' alt='WesleyOliveira98'/></a> <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | Module monitor IPVA due dates
+[national_registration_expiry](national_registration_expiry/) | 16.0.1.0.0 |  | Module creates renavam fields in the fleet, and monitors due dates
 
 [//]: # (end addons)
 
