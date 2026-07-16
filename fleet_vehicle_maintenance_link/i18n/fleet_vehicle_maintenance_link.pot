@@ -6,11 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-16 18:25+0000\n"
-"PO-Revision-Date: 2026-07-16 18:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -19,12 +16,12 @@ msgstr ""
 #. module: fleet_vehicle_maintenance_link
 #: model:ir.model.fields,field_description:fleet_vehicle_maintenance_link.field_fleet_vehicle__maintenance_equipment_ids
 msgid "Equipments"
-msgstr "Equipamentos"
+msgstr ""
 
 #. module: fleet_vehicle_maintenance_link
 #: model:ir.model,name:fleet_vehicle_maintenance_link.model_maintenance_equipment
 msgid "Maintenance Equipment"
-msgstr "Equipamento de manutenção"
+msgstr ""
 
 #. module: fleet_vehicle_maintenance_link
 #. odoo-python
@@ -32,20 +29,17 @@ msgstr "Equipamento de manutenção"
 #: model:ir.model.fields,field_description:fleet_vehicle_maintenance_link.field_fleet_vehicle__maintenance_request_count
 #, python-format
 msgid "Maintenance Requests"
-msgstr "Solicitações de Manutenção"
+msgstr ""
 
 #. module: fleet_vehicle_maintenance_link
 #: model:ir.actions.act_window,name:fleet_vehicle_maintenance_link.maintenance_request_with_vehicle_action
 #: model:ir.ui.menu,name:fleet_vehicle_maintenance_link.fleet_maintenance_menu
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_maintenance_link.fleet_vehicle_view_form_inherit_maintenance
 msgid "Maintenances"
-msgstr "Manutenções"
+msgstr ""
 
 #. module: fleet_vehicle_maintenance_link
 #: model:ir.model,name:fleet_vehicle_maintenance_link.model_fleet_vehicle
 #: model:ir.model.fields,field_description:fleet_vehicle_maintenance_link.field_maintenance_equipment__fleet_vehicle_id
 msgid "Vehicle"
-msgstr "Veículo"
-
-#~ msgid "Smart Search"
-#~ msgstr "Busca Inteligente"
+msgstr ""
