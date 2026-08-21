@@ -210,6 +210,11 @@ msgid ""
 msgstr ""
 
 #. module: fuel_stock_consume
+#: model_terms:ir.actions.act_window,help:fuel_stock_consume.fleet_vehicle_stock_move_action
+msgid "No stock move found for this vehicle"
+msgstr ""
+
+#. module: fuel_stock_consume
 #: model:ir.model,name:fuel_stock_consume.model_fleet_vehicle_odometer
 msgid "Odometer log for a vehicle"
 msgstr ""
@@ -273,6 +278,30 @@ msgstr ""
 #. module: fuel_stock_consume
 #: model:ir.model,name:fuel_stock_consume.model_stock_move
 msgid "Stock Move"
+msgstr ""
+
+#. module: fuel_stock_consume
+#: model:ir.actions.act_window,name:fuel_stock_consume.fleet_vehicle_stock_move_action
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__stock_move_ids
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.fleet_vehicle_form_inherit_fuel_consumption
+msgid "Stock Moves"
+msgstr ""
+
+#. module: fuel_stock_consume
+#: model_terms:ir.actions.act_window,help:fuel_stock_consume.fleet_vehicle_stock_move_action
+msgid ""
+"Stock moves are linked to a vehicle through the fuel\n"
+"                consumption operations performed for it."
+msgstr ""
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__stock_move_count
+msgid "Stock Moves Count"
+msgstr ""
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_fleet_vehicle__stock_move_ids
+msgid "Stock moves linked to this vehicle"
 msgstr ""
 
 #. module: fuel_stock_consume

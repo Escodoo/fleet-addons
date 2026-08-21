@@ -17,6 +17,19 @@
                     class="oe_stat_button"
                     icon="fa-tint"
                 />
+                <button
+                    name="action_view_stock_moves"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-exchange"
+                    groups="stock.group_stock_user"
+                >
+                    <field
+                        name="stock_move_count"
+                        widget="statinfo"
+                        string="Stock Moves"
+                    />
+                </button>
             </xpath>
             <xpath expr="//field[@name='driver_id']" position="after">
                 <field name="fuel_consumption_location_id" />

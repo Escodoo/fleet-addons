@@ -57,3 +57,6 @@ Reporting
    - View fuel consumption history in Fleet > Vehicles > Odometer
    - Filter by date range, vehicle, or driver
    - Link back to source stock picking for audit trail
+   - Open the "Stock Moves" smart button on the vehicle form to list every
+     stock move linked to that vehicle (list, pivot and graph views are
+     available for consumption analysis)
