@@ -657,6 +657,33 @@ class TestFuelStockConsume(common.TransactionCase):
             confirm.action_confirm()
 
     # -------------------------------------------------------------------------
+    # New tests — stock moves smart button on fleet.vehicle
+    # -------------------------------------------------------------------------
+
+    def test_27_vehicle_stock_move_count(self):
+        """Test stock_move_count counts only the moves of each vehicle."""
+        self.assertEqual(self.vehicle.stock_move_count, 0)
+        self.assertEqual(self.vehicle_no_location.stock_move_count, 0)
+
+        picking = self._create_and_validate_picking(odometer_value=2200.0)
+
+        self.vehicle.invalidate_recordset(["stock_move_count"])
+        self.assertEqual(self.vehicle.stock_move_count, len(picking.move_ids))
+        self.assertEqual(self.vehicle.stock_move_ids, picking.move_ids)
+        self.assertEqual(self.vehicle_no_location.stock_move_count, 0)
+
+    def test_28_vehicle_action_view_stock_moves(self):
+        """Test action_view_stock_moves returns the moves of the vehicle."""
+        picking = self._create_and_validate_picking(odometer_value=2300.0)
+
+        action = self.vehicle.action_view_stock_moves()
+        self.assertEqual(action["res_model"], "stock.move")
+        self.assertEqual(action["domain"], [("vehicle_id", "=", self.vehicle.id)])
+
+        moves = self.env["stock.move"].search(action["domain"])
+        self.assertEqual(moves, picking.move_ids)
+
+    # -------------------------------------------------------------------------
     # Helpers
     # -------------------------------------------------------------------------
 
