@@ -288,6 +288,16 @@ msgid "Stock Moves"
 msgstr ""
 
 #. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__stock_move_count
+msgid "Stock Moves Count"
+msgstr ""
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle_odometer__stock_picking_id
+msgid "Stock Picking"
+msgstr ""
+
+#. module: fuel_stock_consume
 #: model_terms:ir.actions.act_window,help:fuel_stock_consume.fleet_vehicle_stock_move_action
 msgid ""
 "Stock moves are linked to a vehicle through the fuel\n"
@@ -295,18 +305,8 @@ msgid ""
 msgstr ""
 
 #. module: fuel_stock_consume
-#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__stock_move_count
-msgid "Stock Moves Count"
-msgstr ""
-
-#. module: fuel_stock_consume
 #: model:ir.model.fields,help:fuel_stock_consume.field_fleet_vehicle__stock_move_ids
 msgid "Stock moves linked to this vehicle"
-msgstr ""
-
-#. module: fuel_stock_consume
-#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle_odometer__stock_picking_id
-msgid "Stock Picking"
 msgstr ""
 
 #. module: fuel_stock_consume
