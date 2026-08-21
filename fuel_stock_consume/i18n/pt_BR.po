@@ -1,0 +1,379 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fuel_stock_consume
+#
+# Translators:
+# Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2026
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-21 12:00+0000\n"
+"PO-Revision-Date: 2026-08-21 12:00+0000\n"
+"Last-Translator: Wesley Oliveira <wesley.oliveira@escodoo.com.br>, 2026\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+msgid "<strong>Confirmar operação de consumo de combustível?</strong>"
+msgstr "<strong>Confirmar operação de consumo de combustível?</strong>"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__analytic_distribution
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__analytic_distribution
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__analytic_distribution
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Analytic"
+msgstr "Analítico"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Analytic Distribution"
+msgstr "Distribuição Analítica"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__analytic_distribution_search
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__analytic_distribution_search
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__analytic_distribution_search
+msgid "Analytic Distribution Search"
+msgstr "Busca de Distribuição Analítica"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__analytic_precision
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__analytic_precision
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__analytic_precision
+msgid "Analytic Precision"
+msgstr "Precisão Analítica"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__available_qty
+msgid "Available Quantity"
+msgstr "Quantidade Disponível"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_picking__picking_type_is_fuel_consumption
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_picking_type__is_fuel_consumption
+msgid "Check if this operation type is for fuel consumption"
+msgstr "Marque se este tipo de operação é para consumo de combustível"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+msgid "Confirm Fuel Consumption"
+msgstr "Confirmar Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__create_uid
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__create_date
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_picking__odometer_value
+msgid "Current odometer reading of the vehicle"
+msgstr "Leitura atual do odômetro do veículo"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__display_name
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__driver_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__driver_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_move__driver_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__driver_id
+msgid "Driver"
+msgstr "Motorista"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_move__driver_id
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_picking__driver_id
+msgid "Driver responsible for the vehicle"
+msgstr "Motorista responsável pelo veículo"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__picking_type_is_fuel_consumption
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking_type__is_fuel_consumption
+#: model:ir.ui.menu,name:fuel_stock_consume.menu_fuel_consume_wizard
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.fleet_vehicle_form_inherit_fuel_consumption
+msgid "Fuel Consumption"
+msgstr "Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_fuel_consume_confirm_wizard
+msgid "Fuel Consumption Confirmation Wizard"
+msgstr "Assistente de Confirmação de Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__fuel_consumption_location_id
+msgid "Fuel Consumption Location"
+msgstr "Local de Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:res.groups,name:fuel_stock_consume.group_fuel_consumption_manager
+msgid "Fuel Consumption Manager"
+msgstr "Gerente de Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_location__is_fuel_consumption_source
+msgid "Fuel Consumption Source"
+msgstr "Origem de Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_fuel_consume_wizard
+msgid "Fuel Consumption Wizard"
+msgstr "Assistente de Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__product_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__product_id
+msgid "Fuel Product"
+msgstr "Produto Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fuel_stock_consume
+#. odoo-python
+#: code:addons/fuel_stock_consume/wizards/fuel_consume_confirm_wizard.py:0
+#, python-format
+msgid "Insufficient stock at the selected location."
+msgstr "Estoque insuficiente no local selecionado."
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_stock_location
+msgid "Inventory Locations"
+msgstr "Locais de Estoque"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard____last_update
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__write_uid
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__write_date
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_fleet_vehicle__fuel_consumption_location_id
+msgid "Location where fuel is consumed for this vehicle"
+msgstr "Local onde o combustível é consumido para este veículo"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_location__is_fuel_consumption_source
+msgid "Mark this location as a valid source for fuel consumption operations"
+msgstr ""
+"Marque este local como origem válida para operações de consumo de "
+"combustível"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Next"
+msgstr "Próximo"
+
+#. module: fuel_stock_consume
+#. odoo-python
+#: code:addons/fuel_stock_consume/wizards/fuel_consume_confirm_wizard.py:0
+#, python-format
+msgid ""
+"No fuel consumption location configured for the vehicle or operation type."
+msgstr ""
+"Nenhum local de consumo de combustível configurado para o veículo ou tipo de "
+"operação."
+
+#. module: fuel_stock_consume
+#: model_terms:ir.actions.act_window,help:fuel_stock_consume.fleet_vehicle_stock_move_action
+msgid "No stock move found for this vehicle"
+msgstr "Nenhuma movimentação de estoque encontrada para este veículo"
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_fleet_vehicle_odometer
+msgid "Odometer log for a vehicle"
+msgstr "Registro de odômetro de um veículo"
+
+#. module: fuel_stock_consume
+#. odoo-python
+#: code:addons/fuel_stock_consume/models/stock_picking.py:0
+#, python-format
+msgid "Odometer value is required for fuel consumption operation."
+msgstr ""
+"O valor do odômetro é obrigatório para a operação de consumo de combustível."
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__odometer_value
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__odometer_value
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__odometer_value
+msgid "Odometer/Hourmeter Value"
+msgstr "Valor do Odômetro/Horímetro"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Operation"
+msgstr "Operação"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__picking_type_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__picking_type_id
+msgid "Operation Type"
+msgstr "Tipo de Operação"
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Tipo de Separação"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__product_uom_qty
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__product_uom_qty
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: fuel_stock_consume
+#. odoo-python
+#: code:addons/fuel_stock_consume/wizards/fuel_consume_wizard.py:0
+#, python-format
+msgid "Quantity must be greater than zero."
+msgstr "A quantidade deve ser maior que zero."
+
+#. module: fuel_stock_consume
+#: model:ir.actions.act_window,name:fuel_stock_consume.action_fuel_consume_wizard
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Register Fuel Consumption"
+msgstr "Registrar Consumo de Combustível"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__location_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__location_id
+msgid "Source Location"
+msgstr "Local de Origem"
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_stock_move
+msgid "Stock Move"
+msgstr "Movimentação de Estoque"
+
+#. module: fuel_stock_consume
+#: model:ir.actions.act_window,name:fuel_stock_consume.fleet_vehicle_stock_move_action
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__stock_move_ids
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.fleet_vehicle_form_inherit_fuel_consumption
+msgid "Stock Moves"
+msgstr "Movimentações de Estoque"
+
+#. module: fuel_stock_consume
+#: model_terms:ir.actions.act_window,help:fuel_stock_consume.fleet_vehicle_stock_move_action
+msgid ""
+"Stock moves are linked to a vehicle through the fuel\n"
+"                consumption operations performed for it."
+msgstr ""
+"As movimentações de estoque são vinculadas a um veículo pelas operações\n"
+"                de consumo de combustível realizadas para ele."
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle__stock_move_count
+msgid "Stock Moves Count"
+msgstr "Número de Movimentações de Estoque"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_fleet_vehicle__stock_move_ids
+msgid "Stock moves linked to this vehicle"
+msgstr "Movimentações de estoque vinculadas a este veículo"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fleet_vehicle_odometer__stock_picking_id
+msgid "Stock Picking"
+msgstr "Transferência de Estoque"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_fleet_vehicle_odometer__stock_picking_id
+msgid "Stock picking that generated this odometer record"
+msgstr "Transferência de estoque que gerou este registro de odômetro"
+
+#. module: fuel_stock_consume
+#. odoo-python
+#: code:addons/fuel_stock_consume/models/stock_picking.py:0
+#, python-format
+msgid ""
+"The odometer value must be greater than the last recorded value "
+"(%(last_value)s)."
+msgstr ""
+"O valor do odômetro deve ser maior que o último valor registrado "
+"(%(last_value)s)."
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_stock_picking
+msgid "Transfer"
+msgstr "Transferência"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__product_uom_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__product_uom_id
+msgid "Unit of Measure"
+msgstr "Unidade de Medida"
+
+#. module: fuel_stock_consume
+#: model:ir.model,name:fuel_stock_consume.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__vehicle_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__vehicle_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_move__vehicle_id
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__vehicle_id
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_wizard_form
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_move__vehicle_id
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_picking__vehicle_id
+msgid "Vehicle for which the fuel is being consumed"
+msgstr "Veículo para o qual o combustível está sendo consumido"
+
+#. module: fuel_stock_consume
+#. odoo-python
+#: code:addons/fuel_stock_consume/models/stock_picking.py:0
+#, python-format
+msgid "Vehicle is required for fuel consumption operation."
+msgstr "O veículo é obrigatório para a operação de consumo de combustível."
+
+#. module: fuel_stock_consume
+#: model_terms:ir.ui.view,arch_db:fuel_stock_consume.view_fuel_consume_confirm_wizard_form
+msgid "Verifique as informações abaixo antes de confirmar."
+msgstr "Verifique as informações abaixo antes de confirmar."
