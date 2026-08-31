@@ -87,6 +87,7 @@ msgid "Created on"
 msgstr ""
 
 #. module: fuel_stock_consume
+#: model:ir.model.fields,help:fuel_stock_consume.field_stock_move__odometer_value
 #: model:ir.model.fields,help:fuel_stock_consume.field_stock_picking__odometer_value
 msgid "Current odometer reading of the vehicle"
 msgstr ""
@@ -229,6 +230,7 @@ msgstr ""
 #. module: fuel_stock_consume
 #: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_confirm_wizard__odometer_value
 #: model:ir.model.fields,field_description:fuel_stock_consume.field_fuel_consume_wizard__odometer_value
+#: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_move__odometer_value
 #: model:ir.model.fields,field_description:fuel_stock_consume.field_stock_picking__odometer_value
 msgid "Odometer/Hourmeter Value"
 msgstr ""
