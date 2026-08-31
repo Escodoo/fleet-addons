@@ -21,3 +21,9 @@ class StockMove(models.Model):
         string="Driver",
         readonly=True,
     )
+    odometer_value = fields.Float(
+        related="picking_id.odometer_value",
+        store=True,
+        string="Odometer/Hourmeter Value",
+        readonly=True,
+    )

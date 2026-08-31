@@ -12,6 +12,7 @@
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="vehicle_id" optional="show" />
                 <field name="driver_id" optional="show" />
+                <field name="odometer_value" optional="show" />
             </xpath>
         </field>
     </record>
