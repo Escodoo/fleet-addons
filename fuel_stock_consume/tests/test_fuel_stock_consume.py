@@ -385,7 +385,7 @@ class TestFuelStockConsume(common.TransactionCase):
         self.assertFalse(non_source.is_fuel_consumption_source)
 
     def test_11_stock_move_vehicle_driver_related_fields(self):
-        """Test vehicle_id and driver_id related fields on stock.move."""
+        """Test vehicle_id, driver_id and odometer_value related fields."""
         picking = self._create_and_validate_picking(
             odometer_value=600.0, driver=self.driver
         )
@@ -400,6 +400,11 @@ class TestFuelStockConsume(common.TransactionCase):
                 move.driver_id,
                 self.driver,
                 "stock.move.driver_id should be related from picking",
+            )
+            self.assertEqual(
+                move.odometer_value,
+                600.0,
+                "stock.move.odometer_value should be related from picking",
             )
 
     def test_12_stock_move_no_vehicle_when_not_set(self):
