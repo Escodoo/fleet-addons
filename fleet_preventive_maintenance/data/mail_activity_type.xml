@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <record
+        id="mail_activity_type_preventive_maintenance_alert"
+        model="mail.activity.type"
+    >
+        <field name="name">Preventive Maintenance Alert</field>
+        <field name="summary">Preventive Maintenance Alert</field>
+        <field name="category">default</field>
+        <field name="res_model">fleet.vehicle</field>
+    </record>
+</odoo>
