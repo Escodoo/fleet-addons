@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 - TODAY, Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record
+        id="fleet_vehicle_model_view_form_inherit_preventive_maintenance"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >fleet.vehicle.model.form.inherit.preventive.maintenance</field>
+        <field name="model">fleet.vehicle.model</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_model_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="inside">
+                <group string="Preventive Maintenance">
+                    <field name="preventive_interval" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
